@@ -18,6 +18,7 @@ func main() {
 		panic(fmt.Errorf("failed to read config file: %w", err))
 	}
 	dao.MysqlInit()
+	dao.RedisInit()
 	fmt.Println(service.GetByAuthId(1))
 	r := gin.Default()
 	r.Run(":" + viper.GetString("server.port"))
