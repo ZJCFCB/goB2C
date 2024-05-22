@@ -10,3 +10,8 @@ redis:
   host: localhost
   port: 6379
   db : 0
+
+#其它的配置文件
+resizeImageSize : 200,400
+ossStatus : false
+ossDomain : "http://oss-cn-shanghai.aliyuncs.com"
