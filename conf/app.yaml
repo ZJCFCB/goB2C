@@ -15,3 +15,5 @@ redis:
 resizeImageSize : 200,400
 ossStatus : false
 ossDomain : "http://oss-cn-shanghai.aliyuncs.com"
+redisTime : 3600
+enableRedis : true

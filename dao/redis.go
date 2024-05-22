@@ -1,6 +1,9 @@
 package dao
 
 import (
+	"encoding/json"
+	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/garyburd/redigo/redis"
@@ -8,8 +11,12 @@ import (
 )
 
 var RedisPool *redis.Pool
+var redisTime int
+var enableRedis bool
 
 func RedisInit() {
+	enableRedis = viper.GetBool("enableRedis")
+	redisTime, _ = strconv.Atoi(viper.GetString("redisTime"))
 	ip := viper.GetString("redis.host")
 	port := viper.GetString("redis.port")
 	db := viper.GetInt("redis.db")
@@ -26,4 +33,33 @@ func RedisInit() {
 		},
 	}
 	RedisPool = pool
+}
+
+func RedisSet(key string, value interface{}) {
+	data, err := json.Marshal(value)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	conn := RedisPool.Get()
+	fmt.Println("redistiem", redisTime)
+	_, err = conn.Do("SET", key, string(data), "EX", redisTime) //有一个过期时间
+	if err != nil {
+		fmt.Println("redis写入数据失败", err)
+	}
+}
+
+func RedisGet(key string, value interface{}) bool {
+	conn := RedisPool.Get()
+	str, err := redis.String(conn.Do("GET", key))
+	if err != nil {
+		fmt.Println("redis读取数据失败", err)
+		return false
+	}
+	err = json.Unmarshal([]byte(str), value)
+	if err != nil {
+		fmt.Println(err)
+		return false
+	}
+	return true
 }

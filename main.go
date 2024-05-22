@@ -9,6 +9,11 @@ import (
 	"github.com/spf13/viper"
 )
 
+type TestS struct {
+	Id  int    `json:"id"`
+	Pwd string `json:"pwd`
+}
+
 func main() {
 	//viper.AddConfigPath("./conf")
 	viper.SetConfigFile("conf/app.yaml")
@@ -20,6 +25,11 @@ func main() {
 	dao.MysqlInit()
 	dao.RedisInit()
 	fmt.Println(service.GetByAuthId(1))
+	var t TestS = TestS{12090, "dfad"}
+	dao.RedisSet("key2", t)
+	var y TestS
+	dao.RedisGet("key2", &y)
+	fmt.Println(y)
 	r := gin.Default()
 	r.Run(":" + viper.GetString("server.port"))
 }
