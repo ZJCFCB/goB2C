@@ -1,7 +1,7 @@
 package model
 
 type ProductAttr struct {
-	ID              int    `gorm:"column:id" json:"id"`
+	Id              int    `gorm:"column:id" json:"id"`
 	ProductID       int    `gorm:"column:product_id" json:"product_id"`
 	AttributeCateID int    `gorm:"column:attribute_cate_id" json:"attribute_cate_id"`
 	AttributeID     int    `gorm:"column:attribute_id" json:"attribute_id"`
@@ -11,4 +11,8 @@ type ProductAttr struct {
 	Sort            int    `gorm:"column:sort" json:"sort"`
 	AddTime         int    `gorm:"column:add_time" json:"add_time"`
 	Status          int8   `gorm:"column:status" json:"status"`
+}
+
+func (ProductAttr) TableName() string {
+	return "product_attr"
 }

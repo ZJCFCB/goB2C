@@ -1,7 +1,9 @@
 package model
 
+import "goB2C/dao"
+
 type Product struct {
-	ID              int     `gorm:"column:id" json:"id"`
+	Id              int     `gorm:"column:id" json:"id"`
 	Title           string  `gorm:"column:title" json:"title"`
 	SubTitle        string  `gorm:"column:sub_title" json:"sub_title"`
 	ProductSn       string  `gorm:"column:product_sn" json:"product_sn"`
@@ -28,4 +30,34 @@ type Product struct {
 	Sort            int     `gorm:"column:sort" json:"sort"`
 	Status          int8    `gorm:"column:status" json:"status"`
 	AddTime         int     `gorm:"column:add_time" json:"add_time"`
+}
+
+func (Product) TableName() string {
+	return "product"
+}
+
+func GetProductByCategory(cateId int, productType string, limitNum int) []Product {
+	product := []Product{}
+	productCate := []ProductCate{}
+	dao.DB.Where("pid=?", cateId).Find(&productCate)
+	var tempSlice []int
+	if len(productCate) > 0 {
+		for i := 0; i < len(productCate); i++ {
+			tempSlice = append(tempSlice, productCate[i].Id)
+		}
+	}
+	tempSlice = append(tempSlice, cateId)
+	where := "cate_id in (?)"
+	switch productType {
+	case "hot":
+		where += "AND is_hot=1"
+	case "best":
+		where += "AND is_best=1"
+	case "new":
+		where += "AND is_new=1"
+	default:
+		break
+	}
+	dao.DB.Where(where, tempSlice).Select("id,title,price,product_img,sub_title").Limit(limitNum).Order("sort desc").Find(&product)
+	return product
 }

@@ -3,9 +3,8 @@ package main
 import (
 	"fmt"
 	"goB2C/dao"
-	"goB2C/service"
+	"goB2C/model"
 
-	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
 
@@ -24,12 +23,9 @@ func main() {
 	}
 	dao.MysqlInit()
 	dao.RedisInit()
-	fmt.Println(service.GetByAuthId(1))
-	var t TestS = TestS{12090, "dfad"}
-	dao.RedisSet("key2", t)
-	var y TestS
-	dao.RedisGet("key2", &y)
-	fmt.Println(y)
-	r := gin.Default()
-	r.Run(":" + viper.GetString("server.port"))
+	var add model.UserSms
+	dao.DB.Model(&model.UserSms{}).First(&add)
+	fmt.Println(add)
+	//r := gin.Default()
+	//r.Run(":" + viper.GetString("server.port"))
 }

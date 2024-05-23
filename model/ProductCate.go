@@ -1,7 +1,7 @@
 package model
 
 type ProductCate struct {
-	ID          int    `gorm:"column:id" json:"id"`
+	Id          int    `gorm:"column:id" json:"id"`
 	Title       string `gorm:"column:title" json:"title"`
 	CateImg     string `gorm:"column:cate_img" json:"cate_img"`
 	Link        string `gorm:"column:link" json:"link"`
@@ -13,4 +13,8 @@ type ProductCate struct {
 	Sort        int    `gorm:"column:sort" json:"sort"`
 	Status      int8   `gorm:"column:status" json:"status"`
 	AddTime     int    `gorm:"column:add_time" json:"add_time"`
+}
+
+func (ProductCate) TableName() string {
+	return "product_cate"
 }

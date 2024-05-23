@@ -1,7 +1,9 @@
 package model
 
+//用户地址模型
+
 type Address struct {
-	ID             int    `gorm:"column:id" json:"id"`
+	Id             int    `gorm:"column:id" json:"id"`
 	UID            int    `gorm:"column:uid" json:"uid"`
 	Phone          string `gorm:"column:phone" json:"phone"`
 	Name           string `gorm:"column:name" json:"name"`

@@ -1,7 +1,12 @@
 package model
 
+import (
+	"goB2C/dao"
+	"reflect"
+)
+
 type Setting struct {
-	ID              int    `gorm:"column:id" json:"id"`
+	Id              int    `gorm:"column:id" json:"id"`
 	SiteTitle       string `gorm:"column:site_title" json:"site_title"`
 	SiteLogo        string `gorm:"column:site_logo" json:"site_logo"`
 	SiteKeywords    string `gorm:"column:site_keywords" json:"site_keywords"`
@@ -16,4 +21,18 @@ type Setting struct {
 	EndPoint        string `gorm:"column:end_point" json:"end_point"`
 	BucketName      string `gorm:"column:bucket_name" json:"bucket_name"`
 	OssStatus       int8   `gorm:"column:oss_status" json:"oss_status"`
+}
+
+func (Setting) TableName() string {
+	return "setting"
+}
+
+func GetSettingByColumn(columnName string) string {
+	//redis file
+	setting := Setting{}
+	dao.DB.First(&setting)
+	//反射来获取
+	v := reflect.ValueOf(setting)
+	val := v.FieldByName(columnName).String()
+	return val
 }
