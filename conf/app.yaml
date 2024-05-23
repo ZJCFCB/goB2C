@@ -17,3 +17,7 @@ ossStatus : false
 ossDomain : "http://oss-cn-shanghai.aliyuncs.com"
 redisTime : 3600
 enableRedis : true
+
+secureCookie : "least123"
+copyrequestbody : true
+domain : "127.0.0.1"
