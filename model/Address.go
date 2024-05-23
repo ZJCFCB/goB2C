@@ -4,7 +4,7 @@ package model
 
 type Address struct {
 	Id             int    `gorm:"column:id" json:"id"`
-	UID            int    `gorm:"column:uid" json:"uid"`
+	Uid            int    `gorm:"column:uid" json:"uid"`
 	Phone          string `gorm:"column:phone" json:"phone"`
 	Name           string `gorm:"column:name" json:"name"`
 	Zipcode        string `gorm:"column:zipcode" json:"zipcode"`

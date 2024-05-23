@@ -6,7 +6,7 @@ type Auth struct {
 	ModuleName  string `gorm:"column:module_name" json:"module_name"`
 	ActionName  string `gorm:"column:action_name" json:"action_name"`
 	Type        int8   `gorm:"column:type" json:"type"`
-	URL         string `gorm:"column:url" json:"url"`
+	Url         string `gorm:"column:url" json:"url"`
 	ModuleID    int    `gorm:"column:module_id" json:"module_id"`
 	Sort        int    `gorm:"column:sort" json:"sort"`
 	Description string `gorm:"column:description" json:"description"`

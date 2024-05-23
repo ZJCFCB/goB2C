@@ -3,7 +3,7 @@ package model
 //系统管理员列表
 
 type Administrator struct {
-	id       int    `gorm:"column:id" json:"id"`
+	Id       int    `gorm:"column:id" json:"id"`
 	Username string `gorm:"column:username" json:"username"`
 	Password string `gorm:"column:password" json:"password"`
 	Mobile   string `gorm:"column:mobile" json:"mobile"`
