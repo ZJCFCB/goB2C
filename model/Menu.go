@@ -10,7 +10,7 @@ type Menu struct {
 	Sort        int       `gorm:"column:sort" json:"sort"`
 	Status      int       `gorm:"column:status" json:"status"`
 	AddTime     int       `gorm:"column:add_time" json:"add_time"`
-	ProductItem []Product `gorm:"-"`
+	ProductItem []Product `gorm:"-"` // 用来存相关联的产品
 }
 
 func (Menu) TableName() string {

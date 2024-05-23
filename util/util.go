@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"math/rand"
 	"path"
@@ -12,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/gomarkdown/markdown"
 	"github.com/hunterhug/go_image"
 	"github.com/spf13/viper"
@@ -122,4 +124,49 @@ func FormatAttribute(str string) string {
 
 func Mul(price float64, num int) float64 {
 	return price * float64(num)
+}
+
+// 截取字符串长度
+func SubString(s string, start, length int) string {
+	if len(s) <= start {
+		return ""
+	}
+
+	if len(s) < start+length {
+		return s[start:]
+	}
+
+	return s[start : start+length]
+}
+
+// 转html
+func Str2html(raw string) template.HTML {
+	return template.HTML(raw)
+}
+
+// 加载渲染文件
+func InitHTML(r *gin.Engine) {
+	//设置渲染模板路径
+	r.LoadHTMLGlob("view/backend/administrator/*.html")
+	r.LoadHTMLGlob("view/backend/auth/*.html")
+	r.LoadHTMLGlob("view/backend/banner/*.html")
+	r.LoadHTMLGlob("view/backend/login/*.html")
+	r.LoadHTMLGlob("view/backend/main/*.html")
+	r.LoadHTMLGlob("view/backend/menu/*.html")
+	r.LoadHTMLGlob("view/backend/order/*.html")
+	r.LoadHTMLGlob("view/backend/product/*.html")
+	r.LoadHTMLGlob("view/backend/productCate/*.html")
+	r.LoadHTMLGlob("view/backend/productType/*.html")
+	r.LoadHTMLGlob("view/backend/productTypeAttribute/*.html")
+	r.LoadHTMLGlob("view/backend/public/*.html")
+	r.LoadHTMLGlob("view/backend/role/*.html")
+	r.LoadHTMLGlob("view/backend/setting/*.html")
+
+	r.LoadHTMLGlob("view/frontend/auth/*.html")
+	r.LoadHTMLGlob("view/frontend/buy/*.html")
+	r.LoadHTMLGlob("view/frontend/cart/*.html")
+	r.LoadHTMLGlob("view/frontend/index/*.html")
+	r.LoadHTMLGlob("view/frontend/product/*.html")
+	r.LoadHTMLGlob("view/frontend/public/*.html")
+	r.LoadHTMLGlob("view/frontend/user/*.html")
 }

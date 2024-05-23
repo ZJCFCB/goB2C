@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"goB2C/controllers"
 	"goB2C/dao"
 	"goB2C/model"
 	"goB2C/util"
@@ -31,6 +32,8 @@ func main() {
 		"mul":             util.Mul,
 		"formatAttribute": util.FormatAttribute,
 		"setting":         model.GetSettingByColumn,
+		"substr":          util.SubString,
+		"str2html":        util.Str2html,
 	})
 
 	// 设置跨域访问选项
@@ -41,6 +44,12 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Content-Type"},
 		AllowCredentials: true,
 	}))
+
+	//加载渲染文件
+	util.InitHTML(r)
+
+	//注册方法
+	controllers.RegistFunc(r)
 
 	r.Run(":" + viper.GetString("server.port"))
 }
