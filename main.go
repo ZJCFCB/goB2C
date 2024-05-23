@@ -5,6 +5,7 @@ import (
 	"goB2C/dao"
 	"goB2C/model"
 
+	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
 
@@ -26,6 +27,7 @@ func main() {
 	var add model.UserSms
 	dao.DB.Model(&model.UserSms{}).First(&add)
 	fmt.Println(add)
-	//r := gin.Default()
-	//r.Run(":" + viper.GetString("server.port"))
+	r := gin.Default()
+	r.GET("/cap", model.CapTest)
+	r.Run(":" + viper.GetString("server.port"))
 }
