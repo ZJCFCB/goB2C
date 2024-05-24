@@ -1,16 +1,13 @@
 package controllers
 
 import (
-	"net/http"
+	"goB2C/controllers/frontend"
 
 	"github.com/gin-gonic/gin"
 )
 
 func RegistFunc(r *gin.Engine) {
 
-	r.GET("/hi", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "../public/page_header.html", gin.H{
-			"title": "Admin2 Users",
-		})
-	})
+	var c frontend.IndexController
+	r.GET("/mainPage", c.MainPage)
 }

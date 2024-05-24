@@ -12,26 +12,25 @@ import (
 )
 
 type BaseController struct {
-	Ctx *gin.Context
 }
 
-func (B *BaseController) BaseInit() {
+func (B *BaseController) BaseInit(Ctx *gin.Context) {
 
 	//顶部分类
 	topMenu := []model.Menu{}
 	if hasTopMenu := dao.RedisGet("topMenu", &topMenu); hasTopMenu == true {
-		B.Ctx.Set("topMenuList", topMenu)
+		Ctx.Set("topMenuList", topMenu)
 	} else {
 		dao.DB.Where("status=1 AND position=1").Order("sort desc").Find(&topMenu)
-		B.Ctx.Set("topMenuList", topMenu)
+		Ctx.Set("topMenuList", topMenu)
 		dao.RedisSet("topMenu", topMenu)
 	}
 
 	//左侧分类（预加载）
 	productCate := []model.ProductCate{}
 
-	if hasMiddleMenu := dao.RedisGet("productCate", &productCate); hasMiddleMenu == true {
-		B.Ctx.Set("middleMenu", productCate)
+	if hasproductCate := dao.RedisGet("productCate", &productCate); hasproductCate == true {
+		Ctx.Set("productCateList", productCate)
 	} else {
 		//注意这里的查询语句，预加载的相关知识
 		dao.DB.Preload("ProductCateItem",
@@ -40,7 +39,7 @@ func (B *BaseController) BaseInit() {
 					Order("product_cate.sort DESC")
 			}).Where("pid=0 AND status=1").Order("sort desc").
 			Find(&productCate)
-		B.Ctx.Set("middleMenu", productCate)
+		Ctx.Set("productCateList", productCate)
 		dao.RedisSet("productCate", productCate)
 	}
 
@@ -48,7 +47,7 @@ func (B *BaseController) BaseInit() {
 	middleMenu := []model.Menu{}
 
 	if hasMiddleMenu := dao.RedisGet("middleMenu", &middleMenu); hasMiddleMenu == true {
-		B.Ctx.Set("middleMenu", middleMenu)
+		Ctx.Set("middleMenuList", middleMenu)
 	} else {
 		dao.DB.Where("status=1 AND position=2").Order("sort desc").Find(&middleMenu)
 		for i := 0; i < len(middleMenu); i++ {
@@ -60,13 +59,12 @@ func (B *BaseController) BaseInit() {
 				Select("id,title,product_img,price").Find(&product)
 			middleMenu[i].ProductItem = product
 		}
-		B.Ctx.Set("middleMenuList", middleMenu)
-		dao.RedisSet("middleMenuList", middleMenu)
+		Ctx.Set("middleMenuList", middleMenu)
+		dao.RedisSet("middleMenu", middleMenu)
 	}
-
 	//判断用户是否登录
 	user := model.User{}
-	model.Cookie.Get(B.Ctx, "userinfo", &user)
+	model.Cookie.Get(Ctx, "userinfo", &user)
 	if len(user.Phone) == 11 {
 		str := fmt.Sprintf(`<ul>
 			<li class="userinfo">
@@ -83,7 +81,7 @@ func (B *BaseController) BaseInit() {
 
 			</li>
 		</ul> `, user.Phone)
-		B.Ctx.Set("userinfo", str)
+		Ctx.Set("userinfo", str)
 	} else {
 		str := fmt.Sprintf(`<ul>
 			<li><a href="/auth/login" target="_blank">登录</a></li>
@@ -91,9 +89,9 @@ func (B *BaseController) BaseInit() {
 			<li><a href="/auth/registerStep1" target="_blank" >注册</a></li>
 		</ul>`)
 
-		B.Ctx.Set("userinfo", str)
+		Ctx.Set("userinfo", str)
 	}
 	//把path也放进去
-	urlpath, _ := url.Parse(B.Ctx.Copy().Request.URL.String())
-	B.Ctx.Set("pathname", urlpath)
+	urlpath, _ := url.Parse(Ctx.Copy().Request.URL.String())
+	Ctx.Set("pathname", urlpath)
 }

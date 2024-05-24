@@ -15,7 +15,7 @@ type TestS struct {
 }
 
 func main() {
-	viper.SetConfigFile("conf/app.yaml")
+	viper.SetConfigFile("../conf/app.yaml")
 
 	err := viper.ReadInConfig()
 	if err != nil {
@@ -23,10 +23,15 @@ func main() {
 	}
 	dao.MysqlInit()
 	dao.RedisInit()
+	//fmt.Println(model.GetProductByCategory(1, "best", 8))
 	var add model.UserSms
 	dao.DB.Model(&model.UserSms{}).First(&add)
 	fmt.Println(add)
 	r := gin.Default()
 	r.GET("/cap", model.CapTest)
+	r.LoadHTMLFiles("../view/frontend/public/page_footer.html")
+	r.GET("/foot", func(ctx *gin.Context) {
+		ctx.HTML(200, "page_footer.html", "")
+	})
 	r.Run(":" + viper.GetString("server.port"))
 }

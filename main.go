@@ -45,9 +45,13 @@ func main() {
 		AllowCredentials: true,
 	}))
 
+	//设置Gin的错误捕获,放在error.log中
+	r.Use(gin.RecoveryWithWriter(util.GetLogWriter()))
+
 	//加载渲染文件
 	util.InitHTML(r)
 
+	r.Static("static", "static")
 	//注册方法
 	controllers.RegistFunc(r)
 

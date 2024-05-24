@@ -5,8 +5,10 @@ import (
 	"encoding/hex"
 	"fmt"
 	"html/template"
+	"io"
 	"io/ioutil"
 	"math/rand"
+	"os"
 	"path"
 	"regexp"
 	"strconv"
@@ -19,7 +21,12 @@ import (
 	"github.com/spf13/viper"
 )
 
-//在这里定义一些基础库
+// 在这里定义一些基础库
+func GetLogWriter() io.Writer {
+	// 创建日志文件
+	f, _ := os.Create("error.log")
+	return f
+}
 
 // 封装一个产生随机数的函数  由四位数字组成
 func GetRandomNum() string {
@@ -145,7 +152,7 @@ func Str2html(raw string) template.HTML {
 }
 
 // 加载渲染文件
-func InitHTML(r *gin.Engine) {
+func InitHTMLTest(r *gin.Engine) {
 	//设置渲染模板路径
 	r.LoadHTMLGlob("view/backend/administrator/*.html")
 	r.LoadHTMLGlob("view/backend/auth/*.html")
@@ -169,4 +176,8 @@ func InitHTML(r *gin.Engine) {
 	r.LoadHTMLGlob("view/frontend/product/*.html")
 	r.LoadHTMLGlob("view/frontend/public/*.html")
 	r.LoadHTMLGlob("view/frontend/user/*.html")
+}
+
+func InitHTML(r *gin.Engine) {
+	r.LoadHTMLFiles("view/frontend/index/index.html", "view/frontend/public/page_header.html", "view/frontend/public/page_footer.html")
 }
