@@ -51,8 +51,10 @@ func main() {
 	//加载渲染文件
 	util.InitHTML(r)
 
+	//加载静态文件
 	r.Static("static", "static")
-	//注册方法
+
+	//注册路由及方法
 	controllers.RegistFunc(r)
 
 	r.Run(":" + viper.GetString("server.port"))

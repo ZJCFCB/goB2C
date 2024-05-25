@@ -38,12 +38,12 @@ func (I *IndexController) MainPage(Ctx *gin.Context) {
 		dao.RedisSet("phone", phone)
 	}
 
-	//获取电视商品列表
+	//获取电脑商品列表
 	redisTv := []model.Product{}
 	if hasTv := dao.RedisGet("tv", &redisTv); hasTv == true {
 		Ctx.Set("tvList", redisTv)
 	} else {
-		tv := model.GetProductByCategory(1, "best", 8)
+		tv := model.GetProductByCategory(2, "best", 8)
 		Ctx.Set("tvList", tv)
 		dao.RedisSet("tv", tv)
 	}
@@ -59,7 +59,7 @@ func (I *IndexController) MainPage(Ctx *gin.Context) {
 	phoneList, _ := Ctx.Get("phoneList")
 	tvList, _ := Ctx.Get("tvList")
 	userinfo, _ := Ctx.Get("userinfo")
-
+	topMenuList, _ := Ctx.Get("topMenuList")
 	Ctx.HTML(200, "index.html", gin.H{
 		"middleMenuList":  middleMenuList,
 		"productCateList": productCateList,
@@ -67,5 +67,7 @@ func (I *IndexController) MainPage(Ctx *gin.Context) {
 		"phoneList":       phoneList,
 		"tvList":          tvList,
 		"userinfo":        userinfo,
+		"topMenuList":     topMenuList,
+		"TestUse":         "TestUse",
 	})
 }

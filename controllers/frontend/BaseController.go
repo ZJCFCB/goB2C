@@ -26,6 +26,9 @@ func (B *BaseController) BaseInit(Ctx *gin.Context) {
 		dao.RedisSet("topMenu", topMenu)
 	}
 
+	//Todo
+	//获取轮播图，这里还有bug，一时半会不知道怎么改
+
 	//左侧分类（预加载）
 	productCate := []model.ProductCate{}
 
@@ -63,6 +66,10 @@ func (B *BaseController) BaseInit(Ctx *gin.Context) {
 		dao.RedisSet("middleMenu", middleMenu)
 	}
 	//判断用户是否登录
+
+	//在top list中，如果判断用户是已经登录状态（cookie），那么显示的就是登录的前端页面
+	//如果判断是非登录状态，显示的就是登录、注册页面
+
 	user := model.User{}
 	model.Cookie.Get(Ctx, "userinfo", &user)
 	if len(user.Phone) == 11 {
