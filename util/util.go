@@ -179,5 +179,6 @@ func InitHTMLTest(r *gin.Engine) {
 }
 
 func InitHTML(r *gin.Engine) {
+	//加载首页相关的html文件
 	r.LoadHTMLFiles("view/frontend/index/index.html", "view/frontend/public/page_header.html", "view/frontend/public/page_footer.html")
 }
