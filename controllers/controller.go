@@ -3,6 +3,7 @@ package controllers
 import (
 	"goB2C/controllers/backend"
 	"goB2C/controllers/frontend"
+	"goB2C/util"
 
 	"github.com/gin-gonic/gin"
 )
@@ -25,5 +26,14 @@ func RegistFunc(r *gin.Engine) {
 
 	var l backend.LoginController
 	r.GET("/backend/auth/login", l.Login)
+	r.Use(util.FrontendAuth)
 
+	var u frontend.UserController
+	userGroup := r.Group("/user")
+	userGroup.Use(util.FrontendAuth)
+	{
+		userGroup.GET("/", u.Get)
+		userGroup.GET("/order", u.OrderList)
+		userGroup.GET("/orderinfo", u.OrderInfo)
+	}
 }

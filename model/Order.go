@@ -13,7 +13,7 @@ type Order struct {
 	PayType     int8        `gorm:"column:pay_type" json:"pay_type"`
 	OrderStatus int8        `gorm:"column:order_status" json:"order_status"`
 	AddTime     int         `gorm:"column:add_time" json:"add_time"`
-	OrderItem   []OrderItem `gorm:"foreignkey:OrderId;association_foreignkey:Id"`
+	OrderItems  []OrderItem `gorm:"foreignkey:OrderID;association_foreignkey:Id"`
 }
 
 func (Order) TableName() string {

@@ -19,15 +19,7 @@ func (I *IndexController) MainPage(Ctx *gin.Context) {
 	I.BaseInit(Ctx)
 	startTime := time.Now().UnixNano()
 
-	banner := []model.Banner{}
-	if hasBanner := dao.RedisGet("banner", &banner); hasBanner == true {
-		Ctx.Set("bannerList", banner)
-	} else {
-		dao.DB.Where("status=1 AND banner_type=1").Order("sort desc").Find(&banner)
-		Ctx.Set("bannerList", banner)
-		dao.RedisSet("banner", banner)
-	}
-
+	banner := GetBanner()
 	//获取手机商品列表
 	redisPhone := []model.Product{}
 	if hasPhone := dao.RedisGet("phone", &redisPhone); hasPhone == true {
@@ -53,21 +45,15 @@ func (I *IndexController) MainPage(Ctx *gin.Context) {
 
 	fmt.Println("执行时间", endTime-startTime)
 
-	middleMenuList, _ := Ctx.Get("middleMenuList")
-	productCateList, _ := Ctx.Get("productCateList")
-	bannerList, _ := Ctx.Get("bannerList")
 	phoneList, _ := Ctx.Get("phoneList")
 	tvList, _ := Ctx.Get("tvList")
-	userinfo, _ := Ctx.Get("userinfo")
-	topMenuList, _ := Ctx.Get("topMenuList")
 	Ctx.HTML(200, "index.html", gin.H{
-		"middleMenuList":  middleMenuList,
-		"productCateList": productCateList,
-		"bannerList":      bannerList,
+		"middleMenuList":  I.MiddleMenu,
+		"productCateList": I.ProductCate,
+		"bannerList":      banner,
 		"phoneList":       phoneList,
 		"tvList":          tvList,
-		"userinfo":        userinfo,
-		"topMenuList":     topMenuList,
-		"TestUse":         "TestUse",
+		"userinfo":        I.UserInfo,
+		"topMenuList":     I.TopMenu,
 	})
 }
