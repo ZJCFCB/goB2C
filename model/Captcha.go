@@ -2,6 +2,8 @@ package model
 
 import (
 	"fmt"
+	"goB2C/dao"
+	"html/template"
 	"image/color"
 
 	"github.com/gin-gonic/gin"
@@ -44,4 +46,19 @@ func CapTest(c *gin.Context) {
 		"base": base64,
 		"ans":  ans,
 	})
+}
+
+func CreateCaptchaHTML() template.HTML {
+	id, base64, value, err := Cap.Generate()
+	fmt.Println("yzm", id, value)
+	dao.RedisSetString(id, value)
+	if err != nil {
+		fmt.Println("get capte failed", err)
+		return ""
+	}
+	// create html
+	return template.HTML(fmt.Sprintf(`<input type="hidden" name="captcha_id" value="%s">`+
+		`<img id="captcha-img" src="%s"  width="120" height="50"`+
+		` alt="Captcha" >`, id, base64))
+	//onclick="refreshCaptcha()"
 }

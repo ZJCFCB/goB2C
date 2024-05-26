@@ -168,4 +168,6 @@ footer .copyright:first-of-type{margin-top: 10px;}
 
 .captcha img{
     background: #fff;
+    width: 100px;
+    height: 50px;
 }

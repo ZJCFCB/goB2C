@@ -63,3 +63,21 @@ func RedisGet(key string, value interface{}) bool {
 	}
 	return true
 }
+
+func RedisSetString(key string, value string) {
+	conn := RedisPool.Get()
+	_, err := conn.Do("SET", key, value, "EX", 60*3) //有一个过期时间
+	if err != nil {
+		fmt.Println("redis写入数据失败", err)
+	}
+}
+
+func RedisGetString(key string) (string, error) {
+	conn := RedisPool.Get()
+	value, err := redis.String(conn.Do("GET", key))
+	if err != nil {
+		fmt.Println("redis写入数据失败", err)
+		return value, err
+	}
+	return value, nil
+}

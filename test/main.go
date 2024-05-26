@@ -6,6 +6,7 @@ import (
 	"goB2C/model"
 
 	"github.com/gin-gonic/gin"
+	"github.com/mojocn/base64Captcha"
 	"github.com/spf13/viper"
 )
 
@@ -24,14 +25,22 @@ func main() {
 	dao.MysqlInit()
 	dao.RedisInit()
 	//fmt.Println(model.GetProductByCategory(1, "best", 8))
-	var add model.UserSms
-	dao.DB.Model(&model.UserSms{}).First(&add)
-	fmt.Println(add)
+
 	r := gin.Default()
 	r.GET("/cap", model.CapTest)
 	r.LoadHTMLFiles("../view/frontend/public/page_footer.html")
 	r.GET("/foot", func(ctx *gin.Context) {
-		ctx.HTML(200, "page_footer.html", "")
+		var Cap *base64Captcha.Captcha
+
+		id, base64, value, err := Cap.Generate()
+		ctx.Set(id, value)
+		if err != nil {
+			fmt.Println("get capte failed", err)
+		}
+		// create html
+		ctx.String(200, fmt.Sprintf(`<input type="hidden" name="captcha_id" value="%s">`+
+			`<img id="captcha-img" src="data:image/png;base64,%s"`+
+			` alt="Captcha" onclick="refreshCaptcha()">`, id, base64))
 	})
 	r.Run(":" + viper.GetString("server.port"))
 }

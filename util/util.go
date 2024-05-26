@@ -75,7 +75,7 @@ func VerifyEmail(email string) bool {
 }
 
 // 获取日期
-func FormatDade() string {
+func FormatDay() string {
 	return time.Now().Format("20060102")
 }
 
