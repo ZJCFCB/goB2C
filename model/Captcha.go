@@ -62,3 +62,14 @@ func CreateCaptchaHTML() template.HTML {
 		` alt="Captcha" >`, id, base64))
 	//onclick="refreshCaptcha()"
 }
+
+func CaptchaVerify(phoneCodeId string, phone_code string) bool {
+	ans, err := dao.RedisGetString(phoneCodeId)
+	if err != nil {
+		return false
+	}
+	if ans != phone_code {
+		return false
+	}
+	return true
+}

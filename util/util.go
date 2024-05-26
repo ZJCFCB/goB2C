@@ -151,31 +151,8 @@ func Str2html(raw string) template.HTML {
 	return template.HTML(raw)
 }
 
-// 加载渲染文件
-func InitHTMLTest(r *gin.Engine) {
-	//设置渲染模板路径
-	r.LoadHTMLGlob("view/backend/administrator/*.html")
-	r.LoadHTMLGlob("view/backend/auth/*.html")
-	r.LoadHTMLGlob("view/backend/banner/*.html")
-	r.LoadHTMLGlob("view/backend/login/*.html")
-	r.LoadHTMLGlob("view/backend/main/*.html")
-	r.LoadHTMLGlob("view/backend/menu/*.html")
-	r.LoadHTMLGlob("view/backend/order/*.html")
-	r.LoadHTMLGlob("view/backend/product/*.html")
-	r.LoadHTMLGlob("view/backend/productCate/*.html")
-	r.LoadHTMLGlob("view/backend/productType/*.html")
-	r.LoadHTMLGlob("view/backend/productTypeAttribute/*.html")
-	r.LoadHTMLGlob("view/backend/public/*.html")
-	r.LoadHTMLGlob("view/backend/role/*.html")
-	r.LoadHTMLGlob("view/backend/setting/*.html")
-
-	r.LoadHTMLGlob("view/frontend/auth/*.html")
-	r.LoadHTMLGlob("view/frontend/buy/*.html")
-	r.LoadHTMLGlob("view/frontend/cart/*.html")
-	r.LoadHTMLGlob("view/frontend/index/*.html")
-	r.LoadHTMLGlob("view/frontend/product/*.html")
-	r.LoadHTMLGlob("view/frontend/public/*.html")
-	r.LoadHTMLGlob("view/frontend/user/*.html")
+func GetAdminPath() string {
+	return viper.GetString("adminPath")
 }
 
 func InitHTML(r *gin.Engine) {

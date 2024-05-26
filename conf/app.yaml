@@ -20,4 +20,5 @@ enableRedis : true
 
 secureCookie : "least123"
 copyrequestbody : true
-domain : "127.0.0.1"
+domain : ""
+adminPath : backend

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"goB2C/controllers/backend"
 	"goB2C/controllers/frontend"
 
 	"github.com/gin-gonic/gin"
@@ -18,5 +19,11 @@ func RegistFunc(r *gin.Engine) {
 	r.GET("/auth/validateSmsCode", a.ValidateSmsCode)
 	r.GET("/auth/registerStep3", a.RegisterStep3)
 	r.POST("/auth/doRegister", a.GoRegister)
+	r.GET("/auth/login", a.Login)
+	r.POST("/auth/goLogin", a.GoLogin)
+	r.GET("/auth/loginOut", a.LoginOut)
+
+	var l backend.LoginController
+	r.GET("/backend/auth/login", l.Login)
 
 }

@@ -245,3 +245,46 @@ func (c *AuthController) GoRegister(Ctx *gin.Context) {
 	}
 
 }
+
+func (c *AuthController) Login(Ctx *gin.Context) {
+	Ctx.HTML(200, "auth_login.html", gin.H{
+		"prePage": Ctx.Request.Referer(),
+	})
+}
+
+func (c *AuthController) GoLogin(Ctx *gin.Context) {
+	phone := Ctx.PostForm("phone")
+	password := Ctx.PostForm("password")
+	phone_code := Ctx.PostForm("phone_code")
+	phoneCodeId := Ctx.PostForm("phoneCodeId")
+	identifyFlag := model.CaptchaVerify(phoneCodeId, phone_code)
+	if !identifyFlag {
+		Ctx.JSON(200, gin.H{
+			"success": false,
+			"msg":     "输入的图形验证码不正确",
+		})
+		return
+	}
+	password = util.Md5(password)
+	user := []model.User{}
+	dao.DB.Where("phone=? AND password=?", phone, password).Find(&user)
+	if len(user) > 0 {
+		model.Cookie.Set(Ctx, "userinfo", user[0])
+		Ctx.JSON(200, gin.H{
+			"success": true,
+			"msg":     "用户登陆成功",
+		})
+		return
+	} else {
+		Ctx.JSON(200, gin.H{
+			"success": false,
+			"msg":     "用户名或密码不正确",
+		})
+		return
+	}
+}
+
+func (c *AuthController) LoginOut(Ctx *gin.Context) {
+	model.Cookie.Remove(Ctx, "userinfo", "")
+	Ctx.Redirect(http.StatusFound, "/mainPage")
+}

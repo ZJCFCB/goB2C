@@ -35,6 +35,7 @@ func main() {
 		"substr":          util.SubString,
 		"str2html":        util.Str2html,
 		"create_captcha":  model.CreateCaptchaHTML,
+		"getadminPath":    util.GetAdminPath,
 	})
 
 	// 设置跨域访问选项
