@@ -12,6 +12,7 @@ func RegistFunc(r *gin.Engine) {
 
 	var c frontend.IndexController
 	r.GET("/mainPage", c.MainPage)
+	r.GET("/", c.MainPage)
 
 	var a frontend.AuthController
 	r.GET("/auth/registerStep1", a.RegisterStep1)
@@ -36,4 +37,11 @@ func RegistFunc(r *gin.Engine) {
 		userGroup.GET("/order", u.OrderList)
 		userGroup.GET("/orderinfo", u.OrderInfo)
 	}
+
+	var p frontend.ProductController
+	r.GET("/category_:id([0-9]+).html", p.CategoryList)
+	r.GET("/item_:id([0-9]+).html", p.ProductItem)
+	r.GET("/seckill/item_:id([0-9]+).html", p.ProductItem)
+	r.GET("/product/collect", p.Collect)
+	r.GET("/product/getImgList", p.GetImgList)
 }
