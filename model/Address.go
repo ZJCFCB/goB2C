@@ -8,7 +8,7 @@ type Address struct {
 	Phone          string `gorm:"column:phone" json:"phone"`
 	Name           string `gorm:"column:name" json:"name"`
 	Zipcode        string `gorm:"column:zipcode" json:"zipcode"`
-	AddressDetail  string `gorm:"column:address" json:"address"`
+	Address        string `gorm:"column:address" json:"address"`
 	DefaultAddress int    `gorm:"column:default_address" json:"default_address"`
 	AddTime        int    `gorm:"column:add_time" json:"add_time"`
 }

@@ -44,4 +44,14 @@ func RegistFunc(r *gin.Engine) {
 	r.GET("/seckill/item_:id([0-9]+).html", p.ProductItem)
 	r.GET("/product/collect", p.Collect)
 	r.GET("/product/getImgList", p.GetImgList)
+
+	var addr frontend.AddressController
+	addressGroup := r.Group("/address")
+	addressGroup.Use(util.FrontendAuth)
+	{
+		addressGroup.POST("/addAddress", addr.AddAddress)
+		addressGroup.GET("/getOneAddressList", addr.GetOneAddressList)
+		addressGroup.POST("/goEditAddressList", addr.GoEditAddressList)
+		addressGroup.GET("/changeDefaultAddress", addr.ChangeDefaultAddress)
+	}
 }
