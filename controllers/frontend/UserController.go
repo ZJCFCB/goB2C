@@ -83,17 +83,23 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 		where += " AND id in (" + str + ")"
 	}
 	//获取筛选条件
-	tempOrderStatus := Ctx.Query("order_status")
+	tempOrderStatus := Ctx.DefaultQuery("order_status", "100")
 	orderStatus, err := strconv.Atoi(tempOrderStatus)
 	if err != nil {
 		orderStatus = 0
 	}
 	//3、总数量
 	var count int64
-	dao.DB.Where("uid=?", user.Id).Table("order").Count(&count)
 	order := []model.Order{}
-	dao.DB.Where("uid=?", user.Id).Offset((page - 1) * pageSize).Limit(pageSize).Preload("OrderItems").Order("add_time desc").Find(&order)
+	if orderStatus == 100 {
+		dao.DB.Where("uid=?", user.Id).Table("order").Count(&count)
+		dao.DB.Where("uid=?", user.Id).Offset((page - 1) * pageSize).Limit(pageSize).Preload("OrderItems").Order("add_time desc").Find(&order)
 
+	} else {
+		dao.DB.Where("uid=? AND order_status=?", user.Id, orderStatus).Table("order").Count(&count)
+		dao.DB.Where("uid=? AND order_status=?", user.Id, orderStatus).Offset((page - 1) * pageSize).Limit(pageSize).Preload("OrderItems").Order("add_time desc").Find(&order)
+
+	}
 	Ctx.HTML(200, "user_order.html", gin.H{
 		"order":       order,
 		"totalPages":  math.Ceil(float64(count) / float64(pageSize)),
