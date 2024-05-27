@@ -189,6 +189,7 @@ func (B *BuyController) Confirm(Ctx *gin.Context) {
 		"order":       order,
 		"orderItem":   orderItem,
 		"topMenuList": B.TopMenu,
+		"userinfo":    GetUserInfo(user),
 	})
 }
 

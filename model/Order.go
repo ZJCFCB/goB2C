@@ -13,7 +13,7 @@ type Order struct {
 	PayType     int8        `gorm:"column:pay_type" json:"pay_type"`         // 支付类型： 0 alipay    1 wechat
 	OrderStatus int8        `gorm:"column:order_status" json:"order_status"` // 订单状态： 0 已下单  1 已付款  2 已配货  3、发货   4、交易成功   5、退货     6、取消
 	AddTime     int         `gorm:"column:add_time" json:"add_time"`
-	OrderItems  []OrderItem `gorm:"foreignkey:OrderID;association_foreignkey:Id"`
+	OrderItems  []OrderItem `gorm:"foreignkey:order_id;association_foreignkey:Id"`
 }
 
 func (Order) TableName() string {

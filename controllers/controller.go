@@ -77,4 +77,14 @@ func RegistFunc(r *gin.Engine) {
 	r.GET("/cart/delCart", cart.DelCart)
 	r.GET("/cart/changeOneCart", cart.ChangeOneCart)
 	r.GET("/cart/changeAllCart", cart.ChangeAllCart)
+
+	var pay frontend.PayController
+	//支付宝支付
+	r.GET("/alipay", pay.Alipay)
+	r.POST("/alipayNotify", pay.AlipayNotify)
+	r.GET("/alipayReturn", pay.AlipayReturn)
+
+	//微信支付
+	r.GET("/wxpay", pay.WxPay)
+	r.POST("/wxpay/notify", pay.WxPayNotify)
 }
