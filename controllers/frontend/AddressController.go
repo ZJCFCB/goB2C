@@ -46,6 +46,7 @@ func (c *AddressController) AddAddress(Ctx *gin.Context) {
 	})
 }
 
+// 点击以后，获取某一个id的地址信息
 func (c *AddressController) GetOneAddressList(Ctx *gin.Context) {
 	addressIdtemp := Ctx.Query("address_id")
 	addressId, err := strconv.Atoi(addressIdtemp)
@@ -65,10 +66,11 @@ func (c *AddressController) GetOneAddressList(Ctx *gin.Context) {
 	return
 }
 
+// 修改地址
 func (c *AddressController) GoEditAddressList(Ctx *gin.Context) {
 	user := model.User{}
 	model.Cookie.Get(Ctx, "userinfo", &user)
-	addressIdtemp := Ctx.Query("address_id")
+	addressIdtemp := Ctx.PostForm("address_id")
 	addressId, err := strconv.Atoi(addressIdtemp)
 	if err != nil {
 		Ctx.JSON(200, gin.H{
@@ -99,6 +101,7 @@ func (c *AddressController) GoEditAddressList(Ctx *gin.Context) {
 	})
 }
 
+// 修改默认地址
 func (c *AddressController) ChangeDefaultAddress(Ctx *gin.Context) {
 	user := model.User{}
 	model.Cookie.Get(Ctx, "userinfo", &user)

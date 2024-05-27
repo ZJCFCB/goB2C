@@ -101,13 +101,14 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 
 	}
 	Ctx.HTML(200, "user_order.html", gin.H{
-		"order":       order,
-		"totalPages":  math.Ceil(float64(count) / float64(pageSize)),
-		"page":        page,
-		"keywords":    keywords,
-		"orderStatus": orderStatus,
-		"userinfo":    GetUserInfo(user),
-		"topMenuList": GetTopMenuList(),
+		"order":           order,
+		"totalPages":      math.Ceil(float64(count) / float64(pageSize)),
+		"page":            page,
+		"keywords":        keywords,
+		"orderStatus":     orderStatus,
+		"userinfo":        GetUserInfo(user),
+		"topMenuList":     GetTopMenuList(),
+		"productCateList": GetProductCateList(),
 	})
 }
 func (c *UserController) OrderInfo(Ctx *gin.Context) {

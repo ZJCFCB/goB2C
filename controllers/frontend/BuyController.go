@@ -14,6 +14,7 @@ type BuyController struct {
 	BaseController
 }
 
+// 结算页面
 func (B *BuyController) Checkout(Ctx *gin.Context) {
 
 	B.BaseInit(Ctx)
@@ -57,6 +58,7 @@ func (B *BuyController) Checkout(Ctx *gin.Context) {
 		"addressList": addressList,
 		"orderSign":   orderSign,
 		"topMenuList": B.TopMenu,
+		"userinfo":    B.UserInfo,
 	})
 }
 

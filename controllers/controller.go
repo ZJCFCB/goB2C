@@ -68,4 +68,13 @@ func RegistFunc(r *gin.Engine) {
 		buyGroup.GET("/confirm", buy.Confirm)
 		buyGroup.GET("/orderPayStatus", buy.OrderPayStatus)
 	}
+
+	var cart frontend.CartController
+	r.GET("/cart", cart.Get)
+	r.GET("/cart/addCart", cart.AddCart)
+	r.GET("/cart/incCart", cart.IncCart)
+	r.GET("/cart/decCart", cart.DecCart)
+	r.GET("/cart/delCart", cart.DelCart)
+	r.GET("/cart/changeOneCart", cart.ChangeOneCart)
+	r.GET("/cart/changeAllCart", cart.ChangeAllCart)
 }
