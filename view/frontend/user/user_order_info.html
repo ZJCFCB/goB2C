@@ -18,7 +18,7 @@
                     <div class="uc-content-box order-view-box">
                         <div class="box-hd">
                             <div class="more clearfix">
-                                <h2 class="subtitle">订单号：{{.order.OrderId}}                        <span
+                                <h2 class="subtitle">订单号：{{.order.OrderID}}                        <span
                                         class="tag tag-subsidy"></span>
                                 </h2>
                                 <div class="actions">
@@ -86,7 +86,7 @@
                                     </div>
                                     <table class="order-items-table">
                                         <tbody>
-                                        {{range $k,$v := .order.OrderItem}}
+                                        {{range $k,$v := .order.OrderItems}}
                                         <tr>
                                             <td class="col col-thumb">
                                                 <div class="figure figure-thumb">

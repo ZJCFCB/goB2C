@@ -9,9 +9,9 @@ type Order struct {
 	Name        string      `gorm:"column:name" json:"name"`
 	Address     string      `gorm:"column:address" json:"address"`
 	Zipcode     string      `gorm:"column:zipcode" json:"zipcode"`
-	PayStatus   int8        `gorm:"column:pay_status" json:"pay_status"`
-	PayType     int8        `gorm:"column:pay_type" json:"pay_type"`
-	OrderStatus int8        `gorm:"column:order_status" json:"order_status"`
+	PayStatus   int8        `gorm:"column:pay_status" json:"pay_status"`     // 支付状态： 0 表示未支付     1 已经支付
+	PayType     int8        `gorm:"column:pay_type" json:"pay_type"`         // 支付类型： 0 alipay    1 wechat
+	OrderStatus int8        `gorm:"column:order_status" json:"order_status"` // 订单状态： 0 已下单  1 已付款  2 已配货  3、发货   4、交易成功   5、退货     6、取消
 	AddTime     int         `gorm:"column:add_time" json:"add_time"`
 	OrderItems  []OrderItem `gorm:"foreignkey:OrderID;association_foreignkey:Id"`
 }

@@ -59,10 +59,10 @@
                                     {{end}}
                                     </h2>
                                 {{$value.AddTime | timestampToDate}} | {{$value.Name}} |
-                                    订单号：{{$value.OrderId}} | 在线支付
+                                    订单号：{{$value.OrderID}} | 在线支付
                                     实付金额：{{$value.AllPrice}} 元
                                 </div>
-                            {{range $k,$v := $value.OrderItem}}
+                            {{range $k,$v := $value.OrderItems}}
                                 <div class="order-info clearfix">
                                     <div class="col_pic">
                                         <img src="/{{$v.ProductImg}}"/>

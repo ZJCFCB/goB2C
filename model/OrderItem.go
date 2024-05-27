@@ -2,7 +2,7 @@ package model
 
 type OrderItem struct {
 	Id           int     `gorm:"column:id" json:"id"`
-	OrderID      int     `gorm:"column:order_id" json:"order_id"`
+	OrderID      string  `gorm:"column:order_id" json:"order_id"`
 	Uid          int     `gorm:"column:uid" json:"uid"`
 	ProductTitle string  `gorm:"column:product_title" json:"product_title"`
 	ProductID    int     `gorm:"column:product_id" json:"product_id"`

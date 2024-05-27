@@ -65,7 +65,7 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 	if page == 0 {
 		page = 1
 	}
-	pageSize := 2
+	pageSize := 5
 	//3、获取搜索关键词
 	where := "uid=?"
 	keywords := Ctx.Query("keywords")
@@ -75,9 +75,9 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 		var str string
 		for i := 0; i < len(orderitem); i++ {
 			if i == 0 {
-				str += strconv.Itoa(orderitem[i].OrderID)
+				str += orderitem[i].OrderID
 			} else {
-				str += "," + strconv.Itoa(orderitem[i].OrderID)
+				str += "," + orderitem[i].OrderID
 			}
 		}
 		where += " AND id in (" + str + ")"
@@ -90,9 +90,9 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 	}
 	//3、总数量
 	var count int64
-	dao.DB.Where(where, user.Id).Table("order").Count(&count)
+	dao.DB.Where("uid=?", user.Id).Table("order").Count(&count)
 	order := []model.Order{}
-	dao.DB.Where(where, user.Id).Offset((page - 1) * pageSize).Limit(pageSize).Preload("OrderItem").Order("add_time desc").Find(&order)
+	dao.DB.Where("uid=?", user.Id).Offset((page - 1) * pageSize).Limit(pageSize).Preload("OrderItems").Order("add_time desc").Find(&order)
 
 	Ctx.HTML(200, "user_order.html", gin.H{
 		"order":       order,
@@ -101,6 +101,7 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 		"keywords":    keywords,
 		"orderStatus": orderStatus,
 		"userinfo":    GetUserInfo(user),
+		"topMenuList": GetTopMenuList(),
 	})
 }
 func (c *UserController) OrderInfo(Ctx *gin.Context) {
@@ -109,12 +110,15 @@ func (c *UserController) OrderInfo(Ctx *gin.Context) {
 	user := model.User{}
 	model.Cookie.Get(Ctx, "userinfo", &user)
 	order := model.Order{}
-	dao.DB.Where("id=? AND uid=?", id, user.Id).Preload("OrderItem").Find(&order)
+	dao.DB.Where("id=? AND uid=?", id, user.Id).Preload("OrderItems").Find(&order)
 
 	if order.OrderID == "" {
 		Ctx.Redirect(http.StatusFound, "/mainPage")
 	}
 	Ctx.HTML(200, "user_order_info.html", gin.H{
-		"order": order,
+		"order":           order,
+		"userinfo":        GetUserInfo(user),
+		"productCateList": GetProductCateList(),
+		"topMenuList":     GetTopMenuList(),
 	})
 }
