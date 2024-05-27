@@ -75,9 +75,9 @@ func (c *UserController) OrderList(Ctx *gin.Context) {
 		var str string
 		for i := 0; i < len(orderitem); i++ {
 			if i == 0 {
-				str += orderitem[i].OrderID
+				str += orderitem[i].OrderId
 			} else {
-				str += "," + orderitem[i].OrderID
+				str += "," + orderitem[i].OrderId
 			}
 		}
 		where += " AND id in (" + str + ")"

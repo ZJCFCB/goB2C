@@ -54,4 +54,18 @@ func RegistFunc(r *gin.Engine) {
 		addressGroup.POST("/goEditAddressList", addr.GoEditAddressList)
 		addressGroup.GET("/changeDefaultAddress", addr.ChangeDefaultAddress)
 	}
+
+	var buy frontend.BuyController
+	buyGroup := r.Group("/buy")
+	buyGroup.Use(util.FrontendAuth)
+
+	//store := cookie.NewStore([]byte("secret"))
+	//r.Use(sessions.Sessions("mysession", store))
+
+	{
+		buyGroup.GET("/checkout", buy.Checkout)
+		buyGroup.POST("/doOrder", buy.GoOrder)
+		buyGroup.GET("/confirm", buy.Confirm)
+		buyGroup.GET("/orderPayStatus", buy.OrderPayStatus)
+	}
 }

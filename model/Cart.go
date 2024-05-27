@@ -6,13 +6,14 @@ type Cart struct {
 	Id             int     `gorm:"column:id" json:"id"`
 	Title          string  `gorm:"column:title" json:"title"`
 	Price          float64 `gorm:"column:price" json:"price"`
-	GoodsVersion   string  `gorm:"column:goods_version" json:"goods_version"`
+	ProductVersion string  `gorm:"column:goods_version" json:"goods_version"`
 	Num            int     `gorm:"column:num" json:"num"`
 	ProductGift    string  `gorm:"column:product_gift" json:"product_gift"`
 	ProductFitting string  `gorm:"column:product_fitting" json:"product_fitting"`
 	ProductColor   string  `gorm:"column:product_color" json:"product_color"`
 	ProductImg     string  `gorm:"column:product_img" json:"product_img"`
 	ProductAttr    string  `gorm:"column:product_attr" json:"product_attr"`
+	Checked        bool    `gorm:"-"` // 忽略本字段
 }
 
 func (c Cart) TableName() string {

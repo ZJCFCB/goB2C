@@ -76,8 +76,18 @@ func RedisGetString(key string) (string, error) {
 	conn := RedisPool.Get()
 	value, err := redis.String(conn.Do("GET", key))
 	if err != nil {
-		fmt.Println("redis写入数据失败", err)
+		fmt.Println("redis读取数据失败", err)
 		return value, err
 	}
 	return value, nil
+}
+
+func RedisDel(key string) error {
+	conn := RedisPool.Get()
+	_, err := conn.Do("DEL", key)
+	if err != nil {
+		fmt.Println("redis删除数据失败", err)
+		return err
+	}
+	return nil
 }
