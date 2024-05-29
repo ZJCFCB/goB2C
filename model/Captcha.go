@@ -50,7 +50,6 @@ func CapTest(c *gin.Context) {
 
 func CreateCaptchaHTML() template.HTML {
 	id, base64, value, err := Cap.Generate()
-	fmt.Println("yzm", id, value)
 	dao.RedisSetString(id, value)
 	if err != nil {
 		fmt.Println("get capte failed", err)

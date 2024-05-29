@@ -2,6 +2,7 @@ package backend
 
 import (
 	"errors"
+	"fmt"
 	"goB2C/dao"
 	"goB2C/model"
 	"goB2C/util"
@@ -24,11 +25,12 @@ func (c *BaseController) Success(Ctx *gin.Context, message string, redirect stri
 	if strings.Contains(redirect, "http") {
 		Redirect = redirect
 	} else {
-		Redirect = "/" + viper.GetString("adminPath") + redirect
+		Redirect = util.TopPath + redirect
 	}
 	Ctx.HTML(200, "public_success.html", gin.H{
 		"Redirect": Redirect,
-		"Message":  message})
+		"Message":  message,
+	})
 }
 
 // 错误提示
@@ -37,11 +39,13 @@ func (c *BaseController) Error(Ctx *gin.Context, message string, redirect string
 	if strings.Contains(redirect, "http") {
 		Redirect = redirect
 	} else {
-		Redirect = "/" + viper.GetString("adminPath") + redirect
+		Redirect = util.TopPath + redirect
 	}
+	fmt.Println("err redirect dafa", redirect)
 	Ctx.HTML(200, "public_error.html", gin.H{
 		"Redirect": Redirect,
-		"Message":  message})
+		"Message":  message,
+	})
 }
 
 // 重定向

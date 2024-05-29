@@ -88,3 +88,17 @@ func RegistFunc(r *gin.Engine) {
 	r.GET("/wxpay", pay.WxPay)
 	r.POST("/wxpay/notify", pay.WxPayNotify)
 }
+
+func RegisterBackendFunc(r *gin.Engine) {
+
+	mainPath := r.Group(util.TopPath)
+	mainPath.Use(util.BackendAuth)
+	{
+		var login backend.LoginController
+		mainPath.GET("/login", login.Login)
+		// beego.NSRouter("/login/verificode", &backend.LoginController{}, "get:SetYzm"),
+		mainPath.POST("/login/gologin", login.GoLogin)
+		mainPath.GET("/login/loginout", login.LoginOut)
+
+	}
+}

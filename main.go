@@ -58,6 +58,7 @@ func main() {
 
 	//注册路由及方法
 	controllers.RegistFunc(r)
+	controllers.RegisterBackendFunc(r)
 
 	r.Run(":" + viper.GetString("server.port"))
 }

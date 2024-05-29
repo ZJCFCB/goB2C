@@ -9,7 +9,7 @@ type Administrator struct {
 	Mobile   string `gorm:"column:mobile" json:"mobile"`
 	Email    string `gorm:"column:email" json:"email"`
 	Status   int8   `gorm:"column:status" json:"status"`
-	RoleID   int    `gorm:"column:role_id" json:"role_id"`
+	RoleId   int    `gorm:"column:role_id" json:"role_id"`
 	AddTime  int    `gorm:"column:add_time" json:"add_time"`
 	IsSuper  int8   `gorm:"column:is_super" json:"is_super"`
 }
