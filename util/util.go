@@ -79,6 +79,12 @@ func FormatDay() string {
 	return time.Now().Format("20060102")
 }
 
+func TransToDay(t int64) string {
+
+	timestamp := time.Unix(t, 0)
+	return timestamp.Format("20060102")
+}
+
 // 随机生成订单号
 func GenerateOrderId() string {
 	return time.Now().Format("200601021504") + GetRandomNum()

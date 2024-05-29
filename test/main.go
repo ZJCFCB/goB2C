@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"goB2C/dao"
 	"goB2C/model"
+	"goB2C/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/mojocn/base64Captcha"
@@ -16,6 +17,7 @@ type TestS struct {
 }
 
 func main() {
+	fmt.Println(util.TransToDay(1716993222))
 	viper.SetConfigFile("../conf/app.yaml")
 
 	err := viper.ReadInConfig()

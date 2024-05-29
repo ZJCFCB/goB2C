@@ -124,5 +124,14 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/auth/goadd", auth.GoAdd)
 		mainPath.POST("/auth/goedit", auth.GoEdit)
 		mainPath.GET("/auth/delete", auth.Delete)
+
+		//轮播图管理
+		var ban backend.BannerController
+		mainPath.GET("/banner", ban.Get)
+		mainPath.GET("/banner/add", ban.Add)
+		mainPath.GET("/banner/edit", ban.Edit)
+		mainPath.POST("/banner/goadd", ban.GoAdd)
+		mainPath.POST("/banner/goedit", ban.GoEdit)
+		mainPath.GET("/banner/delete", ban.Delete)
 	}
 }
