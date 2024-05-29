@@ -115,5 +115,14 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/administrator/goadd", adm.GoAdd)
 		mainPath.POST("/administrator/goedit", adm.GoEdit)
 		mainPath.GET("/administrator/delete", adm.Delete)
+
+		//权限管理
+		var auth backend.AuthController
+		mainPath.GET("/auth", auth.Get)
+		mainPath.GET("/auth/add", auth.Add)
+		mainPath.GET("/auth/edit", auth.Edit)
+		mainPath.POST("/auth/goadd", auth.GoAdd)
+		mainPath.POST("/auth/goedit", auth.GoEdit)
+		mainPath.GET("/auth/delete", auth.Delete)
 	}
 }
