@@ -39,12 +39,12 @@ func (M *MainController) Get(Ctx *gin.Context) {
 				}
 			}
 		}
-
 		Ctx.HTML(200, "main_index.html", gin.H{
 			"username": userinfo.Username,
 			"authList": auth,
 			"isSuper":  userinfo.IsSuper,
 		})
+		return
 	} else {
 		M.Error(Ctx, "请先登录", "/login")
 		return

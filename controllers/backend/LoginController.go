@@ -28,8 +28,17 @@ func (L *LoginController) GoLogin(Ctx *gin.Context) {
 		administrator := []model.Administrator{}
 		dao.DB.Where("username=? AND password=? AND status=1", username, password).Find(&administrator)
 		if len(administrator) == 1 {
+			userinfo := model.Administrator{}
+			userinfo.Username = administrator[0].Username
+			userinfo.Password = administrator[0].Password
+			userinfo.RoleId = administrator[0].RoleId
+			userinfo.IsSuper = administrator[0].IsSuper
+
+			model.Cookie.Set(Ctx, "userinfo", userinfo)
 			//c.SetSession("userinfo", administrator[0])
-			L.Success(Ctx, "登陆成功", "/")
+			Ctx.Redirect(302, util.TopPath+"/mainBack")
+			//L.Success(Ctx, "登陆成功", "")
+
 		} else {
 			L.Error(Ctx, "无登陆权限或用户名密码错误", "/login")
 		}
@@ -39,5 +48,5 @@ func (L *LoginController) GoLogin(Ctx *gin.Context) {
 }
 
 func (c *LoginController) LoginOut(Ctx *gin.Context) {
-	c.Success(Ctx, "退出登录成功,将返回登陆页面！", util.TopPath+"/login")
+	c.Success(Ctx, "退出登录成功,将返回登陆页面！", "/login")
 }

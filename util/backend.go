@@ -35,7 +35,7 @@ func BackendAuth(Ctx *gin.Context) {
 			}
 			auth := model.Auth{}
 			dao.DB.Where("url=?", urlPath.Path).Find(&auth)
-			if _, ok := roleAuthMap[auth.Id]; !ok {
+			if _, ok := roleAuthMap[auth.Id]; !ok && ok { // 先不做鉴权
 				Ctx.Writer.WriteString("没有权限")
 				return
 			}

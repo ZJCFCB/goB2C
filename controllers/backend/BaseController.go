@@ -27,6 +27,7 @@ func (c *BaseController) Success(Ctx *gin.Context, message string, redirect stri
 	} else {
 		Redirect = util.TopPath + redirect
 	}
+	fmt.Println("success redicet: ", Redirect)
 	Ctx.HTML(200, "public_success.html", gin.H{
 		"Redirect": Redirect,
 		"Message":  message,
@@ -41,7 +42,7 @@ func (c *BaseController) Error(Ctx *gin.Context, message string, redirect string
 	} else {
 		Redirect = util.TopPath + redirect
 	}
-	fmt.Println("err redirect dafa", redirect)
+	fmt.Println("error redicet: ", Redirect)
 	Ctx.HTML(200, "public_error.html", gin.H{
 		"Redirect": Redirect,
 		"Message":  message,
