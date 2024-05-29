@@ -7,12 +7,13 @@ type Auth struct {
 	ActionName  string `gorm:"column:action_name" json:"action_name"`
 	Type        int8   `gorm:"column:type" json:"type"`
 	Url         string `gorm:"column:url" json:"url"`
-	ModuleID    int    `gorm:"column:module_id" json:"module_id"`
+	ModuleId    int    `gorm:"column:module_id" json:"module_id"`
 	Sort        int    `gorm:"column:sort" json:"sort"`
 	Description string `gorm:"column:description" json:"description"`
 	Status      int8   `gorm:"column:status" json:"status"`
 	AddTime     int    `gorm:"column:add_time" json:"add_time"`
-	Checked     int8   `gorm:"column:checked" json:"checked"`
+	AuthItem    []Auth `gorm:"foreignkey:ModuleId;association_foreignkey:Id"`
+	Checked     bool   `gorm:"-"` // 忽略本字段
 }
 
 func (Auth) TableName() string {

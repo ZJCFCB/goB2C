@@ -100,5 +100,11 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/login/gologin", login.GoLogin)
 		mainPath.GET("/login/loginout", login.LoginOut)
 
+		var maincon backend.MainController
+		mainPath.GET("/", maincon.Get)
+		mainPath.GET("/mainBack", maincon.Get)
+		mainPath.GET("/welcome", maincon.Welcome)
+		mainPath.GET("/main/changestatus", maincon.ChangeStatus)
+		mainPath.GET("/main/editnum", maincon.EditNum)
 	}
 }
