@@ -106,5 +106,14 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.GET("/welcome", maincon.Welcome)
 		mainPath.GET("/main/changestatus", maincon.ChangeStatus)
 		mainPath.GET("/main/editnum", maincon.EditNum)
+
+		//adm
+		var adm backend.AdministratorController
+		mainPath.GET("/administrator", adm.Get)
+		mainPath.GET("/administrator/add", adm.Add)
+		mainPath.GET("/administrator/edit", adm.Edit)
+		mainPath.POST("/administrator/goadd", adm.GoAdd)
+		mainPath.POST("/administrator/goedit", adm.GoEdit)
+		mainPath.GET("/administrator/delete", adm.Delete)
 	}
 }

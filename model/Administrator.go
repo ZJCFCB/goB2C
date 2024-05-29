@@ -12,6 +12,7 @@ type Administrator struct {
 	RoleId   int    `gorm:"column:role_id" json:"role_id"`
 	AddTime  int    `gorm:"column:add_time" json:"add_time"`
 	IsSuper  int8   `gorm:"column:is_super" json:"is_super"`
+	Role     Role   `gorm:"foreignkey:RoleId;association_foreignkey:Id"`
 }
 
 func (Administrator) TableName() string {
