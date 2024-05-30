@@ -161,12 +161,21 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.GET("/productCate/delete", pro.Delete)
 
 		//商品属性管理
-		var protype backend.ProductTypeAttrController
-		mainPath.GET("/productTypeAttribute", protype.Get)
-		mainPath.GET("/productTypeAttribute/add", protype.Add)
-		mainPath.GET("/productTypeAttribute/edit", protype.Edit)
-		mainPath.POST("/productTypeAttribute/goadd", protype.GoAdd)
-		mainPath.POST("/productTypeAttribute/goedit", protype.GoEdit)
-		mainPath.GET("/productTypeAttribute/delete", protype.Delete)
+		var protypeatt backend.ProductTypeAttrController
+		mainPath.GET("/productTypeAttribute", protypeatt.Get)
+		mainPath.GET("/productTypeAttribute/add", protypeatt.Add)
+		mainPath.GET("/productTypeAttribute/edit", protypeatt.Edit)
+		mainPath.POST("/productTypeAttribute/goadd", protypeatt.GoAdd)
+		mainPath.POST("/productTypeAttribute/goedit", protypeatt.GoEdit)
+		mainPath.GET("/productTypeAttribute/delete", protypeatt.Delete)
+
+		//商品类型管理
+		var protype backend.ProductTypeController
+		mainPath.GET("/productType", protype.Get)
+		mainPath.GET("/productType/add", protype.Add)
+		mainPath.GET("/productType/edit", protype.Edit)
+		mainPath.POST("/productType/goadd", protype.GoAdd)
+		mainPath.POST("/productType/goedit", protype.GoEdit)
+		mainPath.GET("/productType/delete", protype.Delete)
 	}
 }
