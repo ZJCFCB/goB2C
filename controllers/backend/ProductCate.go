@@ -1,7 +1,6 @@
 package backend
 
 import (
-	"fmt"
 	"goB2C/dao"
 	"goB2C/model"
 	"goB2C/util"
@@ -18,7 +17,6 @@ type ProductCateController struct {
 func (c *ProductCateController) Get(Ctx *gin.Context) {
 	productCate := []model.ProductCate{}
 	dao.DB.Preload("ProductCateItem").Where("pid=0").Find(&productCate)
-	fmt.Println(productCate)
 	Ctx.HTML(200, "productCate_index.html", gin.H{
 		"productCateList": productCate,
 	})

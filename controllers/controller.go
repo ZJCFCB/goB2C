@@ -125,6 +125,17 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/auth/goedit", auth.GoEdit)
 		mainPath.GET("/auth/delete", auth.Delete)
 
+		//部门管理
+		var rolecon backend.RoleController
+		mainPath.GET("/role", rolecon.Get)
+		mainPath.GET("/role/add", rolecon.Add)
+		mainPath.POST("/role/goadd", rolecon.GoAdd)
+		mainPath.GET("/role/edit", rolecon.Edit)
+		mainPath.POST("/role/goedit", rolecon.GoEdit)
+		mainPath.GET("/role/delete", rolecon.Delete)
+		mainPath.GET("/role/auth", rolecon.Auth)
+		mainPath.POST("/role/goauth", rolecon.GoAuth)
+
 		//轮播图管理
 		var ban backend.BannerController
 		mainPath.GET("/banner", ban.Get)
