@@ -7,7 +7,7 @@ type Product struct {
 	Title           string  `gorm:"column:title" json:"title"`
 	SubTitle        string  `gorm:"column:sub_title" json:"sub_title"`
 	ProductSn       string  `gorm:"column:product_sn" json:"product_sn"`
-	CateID          int     `gorm:"column:cate_id" json:"cate_id"`
+	CateId          int     `gorm:"column:cate_id" json:"cate_id"`
 	ClickCount      int     `gorm:"column:click_count" json:"click_count"`
 	ProductNumber   int     `gorm:"column:product_number" json:"product_number"`
 	Price           float64 `gorm:"column:price" json:"price"`
@@ -22,13 +22,13 @@ type Product struct {
 	ProductKeywords string  `gorm:"column:product_keywords" json:"product_keywords"`
 	ProductDesc     string  `gorm:"column:product_desc" json:"product_desc"`
 	ProductContent  string  `gorm:"column:product_content" json:"product_content"`
-	IsDelete        int8    `gorm:"column:is_delete" json:"is_delete"`
-	IsHot           int8    `gorm:"column:is_hot" json:"is_hot"`
-	IsBest          int8    `gorm:"column:is_best" json:"is_best"`
-	IsNew           int8    `gorm:"column:is_new" json:"is_new"`
-	ProductTypeID   int8    `gorm:"column:product_type_id" json:"product_type_id"`
+	IsDelete        int     `gorm:"column:is_delete" json:"is_delete"`
+	IsHot           int     `gorm:"column:is_hot" json:"is_hot"`
+	IsBest          int     `gorm:"column:is_best" json:"is_best"`
+	IsNew           int     `gorm:"column:is_new" json:"is_new"`
+	ProductTypeId   int     `gorm:"column:product_type_id" json:"product_type_id"`
 	Sort            int     `gorm:"column:sort" json:"sort"`
-	Status          int8    `gorm:"column:status" json:"status"`
+	Status          int     `gorm:"column:status" json:"status"`
 	AddTime         int     `gorm:"column:add_time" json:"add_time"`
 }
 
