@@ -25,6 +25,8 @@ func main() {
 	dao.RedisInit()
 	r := gin.Default()
 
+	r.MaxMultipartMemory = 8 << 20
+
 	//添加方法用于前端调用
 	r.SetFuncMap(template.FuncMap{
 		"timestampToDate": util.TimestampToData,

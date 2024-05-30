@@ -188,5 +188,10 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/productType/goadd", protype.GoAdd)
 		mainPath.POST("/productType/goedit", protype.GoEdit)
 		mainPath.GET("/productType/delete", protype.Delete)
+
+		//系统设置
+		var setting backend.SettingController
+		mainPath.GET("/setting", setting.Get)
+		mainPath.POST("/setting/goedit", setting.GoEdit)
 	}
 }
