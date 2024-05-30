@@ -150,5 +150,14 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.GET("/order/edit", order.Edit)
 		mainPath.POST("/order/goEdit", order.GoEdit)
 		mainPath.GET("/order/delete", order.Delete)
+
+		//商品分类管理
+		var pro backend.ProductCateController
+		mainPath.GET("/productCate", pro.Get)
+		mainPath.GET("/productCate/add", pro.Add)
+		mainPath.GET("/productCate/edit", pro.Edit)
+		mainPath.POST("/productCate/goadd", pro.GoAdd)
+		mainPath.POST("/productCate/goedit", pro.GoEdit)
+		mainPath.GET("/productCate/delete", pro.Delete)
 	}
 }

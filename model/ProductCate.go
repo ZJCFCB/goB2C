@@ -11,7 +11,7 @@ type ProductCate struct {
 	Keywords        string        `gorm:"column:keywords" json:"keywords"`
 	Description     string        `gorm:"column:description" json:"description"`
 	Sort            int           `gorm:"column:sort" json:"sort"`
-	Status          int8          `gorm:"column:status" json:"status"`
+	Status          int           `gorm:"column:status" json:"status"`
 	AddTime         int           `gorm:"column:add_time" json:"add_time"`
 	ProductCateItem []ProductCate `gorm:"foreignkey:Pid;association_foreignkey:Id"`
 }
