@@ -119,7 +119,7 @@ func (c *UserController) OrderInfo(Ctx *gin.Context) {
 	order := model.Order{}
 	dao.DB.Where("id=? AND uid=?", id, user.Id).Preload("OrderItems").Find(&order)
 
-	if order.OrderID == "" {
+	if order.OrderId == "" {
 		Ctx.Redirect(http.StatusFound, "/mainPage")
 	}
 	Ctx.HTML(200, "user_order_info.html", gin.H{

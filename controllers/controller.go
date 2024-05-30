@@ -142,5 +142,13 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/menu/goadd", menu.GoAdd)
 		mainPath.POST("/menu/goedit", menu.GoEdit)
 		mainPath.GET("/menu/delete", menu.Delete)
+
+		//订单管理
+		var order backend.OrderController
+		mainPath.GET("/order", order.Get)
+		mainPath.GET("/order/detail", order.Detail)
+		mainPath.GET("/order/edit", order.Edit)
+		mainPath.POST("/order/goEdit", order.GoEdit)
+		mainPath.GET("/order/delete", order.Delete)
 	}
 }

@@ -104,7 +104,7 @@ func (B *BuyController) GoOrder(Ctx *gin.Context) {
 
 		//  3、把订单信息放在订单表，把商品信息放在商品表
 		order := model.Order{
-			OrderID:     util.GenerateOrderId(),
+			OrderId:     util.GenerateOrderId(),
 			Uid:         user.Id,
 			AllPrice:    allPrice,
 			Phone:       addressResult[0].Phone,

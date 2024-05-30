@@ -1,16 +1,9 @@
-{{template "public_page_header_f.html" .}}
-{{template "public_banner.html" .}}
 <!-- end banner_x -->
 <link rel="stylesheet" href="/static/frontend/css/order.css"/>
 <!-- self_info -->
 <div class="grzxbj">
     <div class="selfinfo center">
-        <div class="lfnav fl">
-            <div class="ddzx">用户中心</div>
-            <div class="subddzx">
-            {{template "public_user_left.html" .}}
-            </div>
-        </div>
+        
         <div class="rtcont fr">
             <h1>订单详情</h1>
             <div class="uc-content-box">
@@ -21,12 +14,7 @@
                                 <h2 class="subtitle">订单号：{{.order.OrderId}}                        <span
                                         class="tag tag-subsidy"></span>
                                 </h2>
-                                <div class="actions">
-                                    <a title="申请售后"
-                                       href="http://service.order.shirdon.com/apply/order/id/1160529723001145"
-                                       class="btn btn-small btn-line-gray" data-stat-id="12e905752ea93db8"
-                                       onclick="_msq.push(['trackEvent', '4a854694de3347de-12e905752ea93db8', 'http://service.order.shirdon.com/apply/order/id/1160529723001145', 'pcpid', '']);">申请售后</a>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="box-bd">
@@ -182,8 +170,6 @@
     </div>
 </div>
 <!-- self_info -->
-
-{{template "public_page_footer.html" .}}
 </body>
 
 </html>
