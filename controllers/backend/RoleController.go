@@ -150,7 +150,8 @@ func (c *RoleController) GoAuth(Ctx *gin.Context) {
 		return
 	}
 
-	authNode := Ctx.PostFormArray("auth_node")
+	authNode := Ctx.PostFormArray("access_node")
+
 	roleAuth := model.RoleAuth{}
 	dao.DB.Where("role_id=?", roleId).Delete(&roleAuth)
 	for _, v := range authNode {
