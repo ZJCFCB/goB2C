@@ -15,7 +15,7 @@ type MainController struct {
 
 func (M *MainController) Get(Ctx *gin.Context) {
 	userinfo := model.Administrator{}
-	ok := model.Cookie.Get(Ctx, "userinfo", &userinfo)
+	ok := model.Cookie.Get(Ctx, "adminUserinfo", &userinfo)
 	if ok {
 		roleId := userinfo.RoleId
 		auth := []model.Auth{}

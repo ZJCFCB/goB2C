@@ -15,7 +15,7 @@ var TopPath string = "/admin"
 func BackendAuth(Ctx *gin.Context) {
 	pathname := Ctx.Request.URL.String()
 	userinfo := model.Administrator{}
-	ok := model.Cookie.Get(Ctx, "userinfo", &userinfo)
+	ok := model.Cookie.Get(Ctx, "adminUserinfo", &userinfo)
 	if !(ok && userinfo.Username != "") { // 未登录 重定向到登陆
 		if pathname != TopPath+"/login" &&
 			pathname != TopPath+"/login/gologin" &&

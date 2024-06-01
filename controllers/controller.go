@@ -25,9 +25,9 @@ func RegistFunc(r *gin.Engine) {
 	r.POST("/auth/goLogin", a.GoLogin)
 	r.GET("/auth/loginOut", a.LoginOut)
 
-	var l backend.LoginController
-	r.GET("/backend/auth/login", l.Login)
-	r.Use(util.FrontendAuth)
+	// var l backend.LoginController
+	// r.GET("/backend/auth/login", l.Login)
+	// r.Use(util.FrontendAuth)
 
 	var u frontend.UserController
 	userGroup := r.Group("/user")

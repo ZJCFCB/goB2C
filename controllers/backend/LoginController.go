@@ -34,10 +34,9 @@ func (L *LoginController) GoLogin(Ctx *gin.Context) {
 			userinfo.RoleId = administrator[0].RoleId
 			userinfo.IsSuper = administrator[0].IsSuper
 
-			model.Cookie.Set(Ctx, "userinfo", userinfo)
-			//c.SetSession("userinfo", administrator[0])
+			model.Cookie.Set(Ctx, "adminUserinfo", userinfo)
 			Ctx.Redirect(302, util.TopPath+"/mainBack")
-			//L.Success(Ctx, "登陆成功", "")
+			L.Success(Ctx, "登陆成功", "")
 
 		} else {
 			L.Error(Ctx, "无登陆权限或用户名密码错误", "/login")
@@ -48,5 +47,6 @@ func (L *LoginController) GoLogin(Ctx *gin.Context) {
 }
 
 func (c *LoginController) LoginOut(Ctx *gin.Context) {
+	model.Cookie.Remove(Ctx, "adminUserinfo", "")
 	c.Success(Ctx, "退出登录成功,将返回登陆页面！", "/login")
 }
