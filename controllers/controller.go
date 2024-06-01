@@ -162,7 +162,7 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/order/goEdit", order.GoEdit)
 		mainPath.GET("/order/delete", order.Delete)
 
-		//商品分类管理
+		//商品分类
 		var pro backend.ProductCateController
 		mainPath.GET("/productCate", pro.Get)
 		mainPath.GET("/productCate/add", pro.Add)

@@ -29,6 +29,7 @@ func BackendAuth(Ctx *gin.Context) {
 		urlPath, _ := url.Parse(pathname)
 		//isSuper是超级管理员，不做权限校验
 		//ExcludeAuthPath 里面的路径，做鉴权豁免
+		newPath := TransforPath(string(urlPath.Path))
 		if userinfo.IsSuper == 0 && !excludeAuthPath(string(urlPath.Path)) {
 			roleId := userinfo.RoleId
 			roleAuth := []model.RoleAuth{}
@@ -38,7 +39,7 @@ func BackendAuth(Ctx *gin.Context) {
 				roleAuthMap[v.AuthId] = v.AuthId
 			}
 			auth := model.Auth{}
-			dao.DB.Where("url=?", urlPath.Path).Find(&auth)
+			dao.DB.Where("url=?", newPath).Find(&auth)
 			if _, ok := roleAuthMap[auth.Id]; !ok {
 				Ctx.HTML(500, "public_error.html", gin.H{
 					"Redirect": Ctx.Request.Referer(),
@@ -59,4 +60,20 @@ func excludeAuthPath(urlPath string) bool {
 		}
 	}
 	return false
+}
+
+// 路径转换
+func TransforPath(urlPath string) string {
+	if strings.Contains(urlPath, "goadd") {
+		return strings.Replace(urlPath, "goadd", "add", -1)
+	}
+
+	if strings.Contains(urlPath, "goedit") {
+		return strings.Replace(urlPath, "goedit", "edit", -1)
+	}
+
+	if strings.Contains(urlPath, "goauth") {
+		return strings.Replace(urlPath, "goauth", "auth", -1)
+	}
+	return urlPath
 }

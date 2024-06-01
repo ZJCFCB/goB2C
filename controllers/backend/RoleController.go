@@ -160,5 +160,6 @@ func (c *RoleController) GoAuth(Ctx *gin.Context) {
 		roleAuth.RoleId = roleId
 		dao.DB.Create(&roleAuth)
 	}
-	c.Success(Ctx, "授权成功", "/role/auth?id="+strconv.Itoa(roleId))
+	c.Success(Ctx, "授权成功", "/role")
+	//  "/role/auth?id="+strconv.Itoa(roleId)
 }

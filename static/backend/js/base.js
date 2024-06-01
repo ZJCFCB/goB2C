@@ -40,7 +40,7 @@ var app={
 			var table=$(this).attr("data-table");
 			var field=$(this).attr("data-field");
 			var el=$(this)
-			$.get("/"+config.adminPath+"/main/changestatus",{id:id,table:table,field:field},function(response){				
+			$.get("/admin/main/changestatus",{id:id,table:table,field:field},function(response){				
 				if(response.success){
 
 					if(el.attr("src").indexOf("yes")!=-1){
