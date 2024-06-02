@@ -149,16 +149,18 @@ func (c *ProductCateController) Delete(Ctx *gin.Context) {
 	productCate := model.ProductCate{Id: id}
 	dao.DB.Find(&productCate)
 	address := productCate.CateImg
-	test := os.Remove(address)
-	if test != nil {
-		c.Error(Ctx, "删除物理机上图片错误", "/goodCate")
-		return
+	if address != "" {
+		test := os.Remove(address)
+		if test != nil {
+			c.Error(Ctx, "删除物理机上图片错误", "/productCate")
+			return
+		}
 	}
 	if productCate.Pid == 0 {
 		productCate2 := []model.ProductCate{}
 		dao.DB.Where("pid=?", productCate.Id).Find(&productCate2)
 		if len(productCate2) > 0 {
-			c.Error(Ctx, "请删除当前顶级分类下面的商品！", "/productCate")
+			c.Error(Ctx, "请先删除当前顶级分类下面的商品！", "/productCate")
 			return
 		}
 	}
