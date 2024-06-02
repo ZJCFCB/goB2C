@@ -130,13 +130,15 @@ func (c *BannerController) Delete(Ctx *gin.Context) {
 	banner := model.Banner{Id: id}
 	dao.DB.Find(&banner)
 	address := banner.BannerImg
-	fmt.Println(address)
-	test := os.Remove(address)
-	if test != nil {
-		fmt.Println(test)
-		c.Error(Ctx, "删除物理机上图片错误", "/banner")
-		return
+	if address != "" {
+		test := os.Remove(address)
+		if test != nil {
+			fmt.Println(test)
+			c.Error(Ctx, "删除物理机上图片错误", "/banner")
+			return
+		}
 	}
+
 	dao.DB.Delete(&banner)
 	c.Success(Ctx, "删除轮播图成功", "/banner")
 }

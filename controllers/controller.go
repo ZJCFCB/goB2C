@@ -171,7 +171,7 @@ func RegisterBackendFunc(r *gin.Engine) {
 		mainPath.POST("/productCate/goedit", pro.GoEdit)
 		mainPath.GET("/productCate/delete", pro.Delete)
 
-		//商品属性管理
+		//商品类型属性
 		var protypeatt backend.ProductTypeAttrController
 		mainPath.GET("/productTypeAttribute", protypeatt.Get)
 		mainPath.GET("/productTypeAttribute/add", protypeatt.Add)
