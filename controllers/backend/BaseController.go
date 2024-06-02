@@ -93,17 +93,17 @@ func (c *BaseController) LocalUploadImg(Ctx *gin.Context, picName string) (strin
 	//static/upload/20200623/144325235235.png
 	saveDir := path.Join(dir, fileUnixName+extName)
 	//6、保存图片
-	file, _, err := Ctx.Request.FormFile(picName)
-	if err != nil {
-		return saveDir, err
-	}
-	defer file.Close()
+	// file, _, err := Ctx.Request.FormFile(picName)
+	// if err != nil {
+	// 	return saveDir, err
+	// }
+	// defer file.Close()
 	ff, err := os.OpenFile(saveDir, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		return saveDir, err
 	}
 	defer ff.Close()
-	io.Copy(ff, file)
+	io.Copy(ff, f)
 
 	return saveDir, nil
 }

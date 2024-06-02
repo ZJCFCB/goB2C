@@ -76,6 +76,8 @@ func (c *MenuController) GoAdd(Ctx *gin.Context) {
 	if err != nil {
 		c.Error(Ctx, "增加数据失败", "/menu/add")
 	} else {
+		dao.RedisDel("middleMenu")
+		dao.RedisDel("topMenu")
 		c.Success(Ctx, "增加成功", "/menu")
 	}
 }
@@ -131,6 +133,8 @@ func (c *MenuController) GoEdit(Ctx *gin.Context) {
 	if err2 != nil {
 		c.Error(Ctx, "修改数据失败", "/menu/edit?id="+strconv.Itoa(id))
 	} else {
+		dao.RedisDel("middleMenu")
+		dao.RedisDel("topMenu")
 		c.Success(Ctx, "修改数据成功", prevPage)
 	}
 
@@ -145,6 +149,7 @@ func (c *MenuController) Delete(Ctx *gin.Context) {
 	}
 	menu := model.Menu{Id: id}
 	dao.DB.Delete(&menu)
-
+	dao.RedisDel("middleMenu")
+	dao.RedisDel("topMenu")
 	c.Success(Ctx, "删除数据成功", Ctx.Request.Referer())
 }
