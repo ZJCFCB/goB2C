@@ -71,6 +71,7 @@ func (c *ProductCateController) GoAdd(Ctx *gin.Context) {
 		c.Error(Ctx, "增加失败", "/productCate/add")
 		return
 	}
+	dao.RedisDel("productCate")
 	c.Success(Ctx, "增加成功", "/productCate")
 }
 
@@ -136,6 +137,7 @@ func (c *ProductCateController) GoEdit(Ctx *gin.Context) {
 		c.Error(Ctx, "修改失败", "/productCate/edit?id="+strconv.Itoa(id))
 		return
 	}
+	dao.RedisDel("productCate")
 	c.Success(Ctx, "修改成功", "/productCate")
 }
 
@@ -165,5 +167,6 @@ func (c *ProductCateController) Delete(Ctx *gin.Context) {
 		}
 	}
 	dao.DB.Delete(&productCate)
+	dao.RedisDel("productCate")
 	c.Success(Ctx, "删除成功", "/productCate")
 }
