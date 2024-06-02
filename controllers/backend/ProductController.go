@@ -219,7 +219,6 @@ func (c *ProductController) Edit(Ctx *gin.Context) {
 			productColor[i].Checked = true
 		}
 	}
-
 	//4、商品的图库信息
 	productImage := []model.ProductImage{}
 	dao.DB.Where("product_id=?", product.Id).Find(&productImage)
@@ -317,7 +316,6 @@ func (c *ProductController) GoEdit(Ctx *gin.Context) {
 	prevPage := Ctx.PostForm("prevPage")
 	//2.获取颜色信息 把颜色转化成字符串
 	productColorStr := strings.Join(productColor, ",")
-
 	product := model.Product{Id: id}
 	dao.DB.Find(&product)
 	product.Title = title
@@ -343,7 +341,6 @@ func (c *ProductController) GoEdit(Ctx *gin.Context) {
 	product.Sort = sort
 	product.Status = status
 	product.ProductColor = productColorStr
-
 	//3.上传图片，生成缩略图
 	productImg, err2 := c.UploadImg(Ctx, "product_img")
 	if err2 == nil && len(productImg) > 0 {
@@ -428,7 +425,7 @@ func (c *ProductController) Delete(Ctx *gin.Context) {
 }
 
 func (c *ProductController) GoUpload(Ctx *gin.Context) {
-
+	fmt.Println("Called go upload")
 	savePath, err := c.UploadImg(Ctx, "file")
 	if err != nil {
 		Ctx.JSON(200, gin.H{

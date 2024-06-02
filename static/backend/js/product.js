@@ -15,7 +15,7 @@ var productApp={
         new FroalaEditor('#content', {
             height: 200,
             language: 'zh_cn',
-            imageUploadURL: '/'+config.adminPath+'/product/goUpload'
+            imageUploadURL: '/admin/product/goUpload'
         });
     },
      //动态生成商品规格参数
@@ -24,7 +24,7 @@ var productApp={
             var cate_id = $(this).val()
             var str = ""
             var data = ""
-            $.get('/'+config.adminPath+'/product/getProductTypeAttribute', { "cate_id": cate_id }, function (response) {
+            $.get('/admin/product/getProductTypeAttribute', { "cate_id": cate_id }, function (response) {
                 console.log(response)
                 if (response.success) {
                     data = response.result;
@@ -53,7 +53,7 @@ var productApp={
     //批量上传图片
     initPhotoUploader(){
         $('#photoUploader').diyUpload({
-            url: '/'+config.adminPath+'/product/goUpload',
+            url: '/admin/product/goUpload',
             success: function (response) {
                 console.info(response);
                 var photoStr = '<input type="hidden" name="product_image_list" value=' + response.link + ' />';
@@ -70,7 +70,7 @@ var productApp={
         $(".relation_product_color").change(function(){
             var color_id=$(this).val();
             var product_image_id=$(this).attr("product_image_id");
-            $.get('/'+config.adminPath+'/product/changeProductImageColor',{color_id:color_id,product_image_id:product_image_id},function(response){
+            $.get('/admin/product/changeProductImageColor',{color_id:color_id,product_image_id:product_image_id},function(response){
                     console.log(response);
             });
         })
@@ -82,7 +82,7 @@ var productApp={
             var flag = confirm("确定要删除吗?");
             var _that=this;
             if(flag){
-                $.get('/'+config.adminPath+'/product/removeProductImage',{product_image_id:product_image_id},function(response){
+                $.get('/admin/product/removeProductImage',{product_image_id:product_image_id},function(response){
                     if(response.success){
                         $(_that).parent().remove()
                     }

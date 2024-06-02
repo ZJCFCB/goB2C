@@ -6,7 +6,7 @@ $(function(){
 })
 
 var config={
-	adminPath:"backend"
+	adminPath:"admin"
 }
 var app={
 	
