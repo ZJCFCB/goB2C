@@ -59,6 +59,7 @@ func (c *BannerController) GoAdd(Ctx *gin.Context) {
 			AddTime:    int64(util.GetUnix()),
 		}
 		dao.DB.Create(&banner)
+		dao.RedisDel("banner")
 		c.Success(Ctx, "增加轮播图成功", "/banner")
 	} else {
 		c.Error(Ctx, "增加轮播图失败", "/banner/add")
@@ -117,6 +118,7 @@ func (c *BannerController) GoEdit(Ctx *gin.Context) {
 		c.Error(Ctx, "修改轮播图失败", "/banner/edit?id="+strconv.Itoa(id))
 		return
 	}
+	dao.RedisDel("banner")
 	c.Success(Ctx, "修改轮播图成功", "/banner")
 }
 
@@ -140,5 +142,6 @@ func (c *BannerController) Delete(Ctx *gin.Context) {
 	}
 
 	dao.DB.Delete(&banner)
+	dao.RedisDel("banner")
 	c.Success(Ctx, "删除轮播图成功", "/banner")
 }

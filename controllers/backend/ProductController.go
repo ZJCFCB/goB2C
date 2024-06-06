@@ -26,7 +26,7 @@ func (c *ProductController) Get(Ctx *gin.Context) {
 	if page == 0 {
 		page = 1
 	}
-	pageSize := 5
+	pageSize := 10
 	keyword := Ctx.Query("keyword")
 	where := "1=1"
 	if len(keyword) > 0 {
