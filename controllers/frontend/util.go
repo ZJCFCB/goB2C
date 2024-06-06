@@ -83,7 +83,7 @@ func GetUserInfo(user model.User) string {
 				<ol>
 					<li><a href="/user">个人中心</a></li>
 
-					<li><a href="#">我的收藏</a></li>
+					<li><a href="/coll">我的收藏</a></li>
 
 					<li><a href="/auth/loginOut">退出登录</a></li>
 				</ol>
