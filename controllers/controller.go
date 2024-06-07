@@ -36,6 +36,8 @@ func RegistFunc(r *gin.Engine) {
 		userGroup.GET("/", u.Get)
 		userGroup.GET("/order", u.OrderList)
 		userGroup.GET("/orderinfo", u.OrderInfo)
+		userGroup.POST("/userInfo", u.PassUserinfo)
+		userGroup.POST("/userInfo/add", u.PassUserinfoAdd)
 	}
 
 	var p frontend.ProductController

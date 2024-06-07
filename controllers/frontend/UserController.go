@@ -129,3 +129,41 @@ func (c *UserController) OrderInfo(Ctx *gin.Context) {
 		"topMenuList":     GetTopMenuList(),
 	})
 }
+
+func (c *UserController) PassUserinfo(Ctx *gin.Context) {
+	tempId := Ctx.Query("id")
+	id, _ := strconv.Atoi(tempId)
+	user := model.User{}
+	model.Cookie.Get(Ctx, "userinfo", &user)
+	order := model.Order{}
+	dao.DB.Where("id=? AND uid=?", id, user.Id).Preload("OrderItems").Find(&order)
+
+	if order.OrderId == "" {
+		Ctx.Redirect(http.StatusFound, "/mainPage")
+	}
+	Ctx.HTML(200, "user_order_info.html", gin.H{
+		"order":           order,
+		"userinfo":        GetUserInfo(user),
+		"productCateList": GetProductCateList(),
+		"topMenuList":     GetTopMenuList(),
+	})
+}
+
+func (c *UserController) PassUserinfoAdd(Ctx *gin.Context) {
+	tempId := Ctx.Query("id")
+	id, _ := strconv.Atoi(tempId)
+	user := model.User{}
+	model.Cookie.Get(Ctx, "userinfo", &user)
+	order := model.Order{}
+	dao.DB.Where("id=? AND uid=?", id, user.Id).Preload("OrderItems").Find(&order)
+
+	if order.OrderId == "" {
+		Ctx.Redirect(http.StatusFound, "/mainPage")
+	}
+	Ctx.HTML(200, "user_order_info.html", gin.H{
+		"order":           order,
+		"userinfo":        GetUserInfo(user),
+		"productCateList": GetProductCateList(),
+		"topMenuList":     GetTopMenuList(),
+	})
+}
