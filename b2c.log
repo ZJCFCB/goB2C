@@ -1,0 +1,1871 @@
+nohup: ignoring input
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (64): 
+	- productTypeAttribute_add.html
+	- user_order.html
+	- banner_index.html
+	- productType_edit.html
+	- productTypeAttribute_index.html
+	- sec-kill-list.html
+	- productCate_index.html
+	- item.html
+	- productCate_edit.html
+	- index.html
+	- public_user_left.html
+	- role_auth.html
+	- productType_add.html
+	- cart_addcart_success.html
+	- auth_edit.html
+	- banner_edit.html
+	- menu_edit.html
+	- order_info.html
+	- product_edit.html
+	- user_order_info.html
+	- administrator_edit.html
+	- public_page_aside.html
+	- buy_confirm.html
+	- banner_add.html
+	- public_page_header_b.html
+	- public_page_footer.html
+	- productType_index.html
+	- main_welcome.html
+	- public_page_menu.html
+	- role_add.html
+	- product_item.html
+	- product_list.html
+	- public_banner.html
+	- user_welcome.html
+	- auth_index.html
+	- productTypeAttribute_edit.html
+	- public_error.html
+	- 
+	- auth_login.html
+	- auth_register_step2.html
+	- public_page_header_f.html
+	- administrator_index.html
+	- order_order.html
+	- product_index.html
+	- setting_index.html
+	- buy_checkout.html
+	- secitem.html
+	- menu_add.html
+	- main_index.html
+	- menu_index.html
+	- product_add.html
+	- role_edit.html
+	- login_login.html
+	- sec-kill-list1.html
+	- user_userinfo.html
+	- auth_register_step3.html
+	- auth_add.html
+	- order_edit.html
+	- public_success.html
+	- auth_register_step1.html
+	- cart_cart.html
+	- administrator_add.html
+	- role_index.html
+	- productCate_add.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /mainPage                 --> goB2C/controllers/frontend.(*IndexController).MainPage-fm (5 handlers)
+[GIN-debug] GET    /                         --> goB2C/controllers/frontend.(*IndexController).MainPage-fm (5 handlers)
+[GIN-debug] GET    /auth/registerStep1       --> goB2C/controllers/frontend.AuthController.RegisterStep1-fm (5 handlers)
+[GIN-debug] GET    /auth/sendCode            --> goB2C/controllers/frontend.(*AuthController).SendCode-fm (5 handlers)
+[GIN-debug] GET    /auth/registerStep2       --> goB2C/controllers/frontend.AuthController.RegisterStep2-fm (5 handlers)
+[GIN-debug] GET    /auth/validateSmsCode     --> goB2C/controllers/frontend.(*AuthController).ValidateSmsCode-fm (5 handlers)
+[GIN-debug] GET    /auth/registerStep3       --> goB2C/controllers/frontend.(*AuthController).RegisterStep3-fm (5 handlers)
+[GIN-debug] POST   /auth/doRegister          --> goB2C/controllers/frontend.(*AuthController).GoRegister-fm (5 handlers)
+[GIN-debug] GET    /auth/login               --> goB2C/controllers/frontend.(*AuthController).Login-fm (5 handlers)
+[GIN-debug] POST   /auth/goLogin             --> goB2C/controllers/frontend.(*AuthController).GoLogin-fm (5 handlers)
+[GIN-debug] GET    /auth/loginOut            --> goB2C/controllers/frontend.(*AuthController).LoginOut-fm (5 handlers)
+[GIN-debug] GET    /user/                    --> goB2C/controllers/frontend.(*UserController).Get-fm (6 handlers)
+[GIN-debug] GET    /user/order               --> goB2C/controllers/frontend.(*UserController).OrderList-fm (6 handlers)
+[GIN-debug] GET    /user/orderinfo           --> goB2C/controllers/frontend.(*UserController).OrderInfo-fm (6 handlers)
+[GIN-debug] POST   /user/userInfo            --> goB2C/controllers/frontend.(*UserController).PassUserinfo-fm (6 handlers)
+[GIN-debug] POST   /user/userInfo/add        --> goB2C/controllers/frontend.(*UserController).PassUserinfoAdd-fm (6 handlers)
+[GIN-debug] GET    /category_:id([0-9]+).html --> goB2C/controllers/frontend.(*ProductController).CategoryList-fm (5 handlers)
+[GIN-debug] GET    /item_:id([0-9]+).html    --> goB2C/controllers/frontend.(*ProductController).ProductItem-fm (5 handlers)
+[GIN-debug] GET    /seckill/item_:id([0-9]+).html --> goB2C/controllers/frontend.(*ProductController).ProductItem-fm (5 handlers)
+[GIN-debug] GET    /product/collect          --> goB2C/controllers/frontend.(*ProductController).Collect-fm (5 handlers)
+[GIN-debug] GET    /product/getImgList       --> goB2C/controllers/frontend.(*ProductController).GetImgList-fm (5 handlers)
+[GIN-debug] POST   /address/addAddress       --> goB2C/controllers/frontend.(*AddressController).AddAddress-fm (6 handlers)
+[GIN-debug] GET    /address/getOneAddressList --> goB2C/controllers/frontend.(*AddressController).GetOneAddressList-fm (6 handlers)
+[GIN-debug] POST   /address/goEditAddressList --> goB2C/controllers/frontend.(*AddressController).GoEditAddressList-fm (6 handlers)
+[GIN-debug] GET    /address/changeDefaultAddress --> goB2C/controllers/frontend.(*AddressController).ChangeDefaultAddress-fm (6 handlers)
+[GIN-debug] GET    /buy/checkout             --> goB2C/controllers/frontend.(*BuyController).Checkout-fm (6 handlers)
+[GIN-debug] POST   /buy/doOrder              --> goB2C/controllers/frontend.(*BuyController).GoOrder-fm (6 handlers)
+[GIN-debug] GET    /buy/confirm              --> goB2C/controllers/frontend.(*BuyController).Confirm-fm (6 handlers)
+[GIN-debug] GET    /buy/orderPayStatus       --> goB2C/controllers/frontend.(*BuyController).OrderPayStatus-fm (6 handlers)
+[GIN-debug] GET    /cart                     --> goB2C/controllers/frontend.(*CartController).Get-fm (5 handlers)
+[GIN-debug] GET    /cart/addCart             --> goB2C/controllers/frontend.(*CartController).AddCart-fm (5 handlers)
+[GIN-debug] GET    /cart/incCart             --> goB2C/controllers/frontend.(*CartController).IncCart-fm (5 handlers)
+[GIN-debug] GET    /cart/decCart             --> goB2C/controllers/frontend.(*CartController).DecCart-fm (5 handlers)
+[GIN-debug] GET    /cart/delCart             --> goB2C/controllers/frontend.(*CartController).DelCart-fm (5 handlers)
+[GIN-debug] GET    /cart/changeOneCart       --> goB2C/controllers/frontend.(*CartController).ChangeOneCart-fm (5 handlers)
+[GIN-debug] GET    /cart/changeAllCart       --> goB2C/controllers/frontend.(*CartController).ChangeAllCart-fm (5 handlers)
+[GIN-debug] GET    /alipay                   --> goB2C/controllers/frontend.(*PayController).Alipay-fm (5 handlers)
+[GIN-debug] POST   /alipayNotify             --> goB2C/controllers/frontend.(*PayController).AlipayNotify-fm (5 handlers)
+[GIN-debug] GET    /alipayReturn             --> goB2C/controllers/frontend.(*PayController).AlipayReturn-fm (5 handlers)
+[GIN-debug] GET    /wxpay                    --> goB2C/controllers/frontend.(*PayController).WxPay-fm (5 handlers)
+[GIN-debug] POST   /wxpay/notify             --> goB2C/controllers/frontend.(*PayController).WxPayNotify-fm (5 handlers)
+[GIN-debug] GET    /admin/login              --> goB2C/controllers/backend.(*LoginController).Login-fm (6 handlers)
+[GIN-debug] POST   /admin/login/gologin      --> goB2C/controllers/backend.(*LoginController).GoLogin-fm (6 handlers)
+[GIN-debug] GET    /admin/login/loginout     --> goB2C/controllers/backend.(*LoginController).LoginOut-fm (6 handlers)
+[GIN-debug] GET    /admin/                   --> goB2C/controllers/backend.(*MainController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/mainBack           --> goB2C/controllers/backend.(*MainController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/welcome            --> goB2C/controllers/backend.(*MainController).Welcome-fm (6 handlers)
+[GIN-debug] GET    /admin/main/changestatus  --> goB2C/controllers/backend.(*MainController).ChangeStatus-fm (6 handlers)
+[GIN-debug] GET    /admin/main/editnum       --> goB2C/controllers/backend.(*MainController).EditNum-fm (6 handlers)
+[GIN-debug] GET    /admin/administrator      --> goB2C/controllers/backend.(*AdministratorController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/administrator/add  --> goB2C/controllers/backend.(*AdministratorController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/administrator/edit --> goB2C/controllers/backend.(*AdministratorController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/administrator/goadd --> goB2C/controllers/backend.(*AdministratorController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/administrator/goedit --> goB2C/controllers/backend.(*AdministratorController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/administrator/delete --> goB2C/controllers/backend.(*AdministratorController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/auth               --> goB2C/controllers/backend.(*AuthController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/auth/add           --> goB2C/controllers/backend.(*AuthController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/auth/edit          --> goB2C/controllers/backend.(*AuthController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/auth/goadd         --> goB2C/controllers/backend.(*AuthController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/auth/goedit        --> goB2C/controllers/backend.(*AuthController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/auth/delete        --> goB2C/controllers/backend.(*AuthController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/role               --> goB2C/controllers/backend.(*RoleController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/role/add           --> goB2C/controllers/backend.(*RoleController).Add-fm (6 handlers)
+[GIN-debug] POST   /admin/role/goadd         --> goB2C/controllers/backend.(*RoleController).GoAdd-fm (6 handlers)
+[GIN-debug] GET    /admin/role/edit          --> goB2C/controllers/backend.(*RoleController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/role/goedit        --> goB2C/controllers/backend.(*RoleController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/role/delete        --> goB2C/controllers/backend.(*RoleController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/role/auth          --> goB2C/controllers/backend.(*RoleController).Auth-fm (6 handlers)
+[GIN-debug] POST   /admin/role/goauth        --> goB2C/controllers/backend.(*RoleController).GoAuth-fm (6 handlers)
+[GIN-debug] GET    /admin/banner             --> goB2C/controllers/backend.(*BannerController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/banner/add         --> goB2C/controllers/backend.(*BannerController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/banner/edit        --> goB2C/controllers/backend.(*BannerController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/banner/goadd       --> goB2C/controllers/backend.(*BannerController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/banner/goedit      --> goB2C/controllers/backend.(*BannerController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/banner/delete      --> goB2C/controllers/backend.(*BannerController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/menu               --> goB2C/controllers/backend.(*MenuController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/menu/add           --> goB2C/controllers/backend.(*MenuController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/menu/edit          --> goB2C/controllers/backend.(*MenuController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/menu/goadd         --> goB2C/controllers/backend.(*MenuController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/menu/goedit        --> goB2C/controllers/backend.(*MenuController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/menu/delete        --> goB2C/controllers/backend.(*MenuController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/order              --> goB2C/controllers/backend.(*OrderController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/order/detail       --> goB2C/controllers/backend.(*OrderController).Detail-fm (6 handlers)
+[GIN-debug] GET    /admin/order/edit         --> goB2C/controllers/backend.(*OrderController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/order/goEdit       --> goB2C/controllers/backend.(*OrderController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/order/delete       --> goB2C/controllers/backend.(*OrderController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/productCate        --> goB2C/controllers/backend.(*ProductCateController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/productCate/add    --> goB2C/controllers/backend.(*ProductCateController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/productCate/edit   --> goB2C/controllers/backend.(*ProductCateController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/productCate/goadd  --> goB2C/controllers/backend.(*ProductCateController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/productCate/goedit --> goB2C/controllers/backend.(*ProductCateController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/productCate/delete --> goB2C/controllers/backend.(*ProductCateController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/productTypeAttribute --> goB2C/controllers/backend.(*ProductTypeAttrController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/productTypeAttribute/add --> goB2C/controllers/backend.(*ProductTypeAttrController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/productTypeAttribute/edit --> goB2C/controllers/backend.(*ProductTypeAttrController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/productTypeAttribute/goadd --> goB2C/controllers/backend.(*ProductTypeAttrController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/productTypeAttribute/goedit --> goB2C/controllers/backend.(*ProductTypeAttrController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/productTypeAttribute/delete --> goB2C/controllers/backend.(*ProductTypeAttrController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/productType        --> goB2C/controllers/backend.(*ProductTypeController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/productType/add    --> goB2C/controllers/backend.(*ProductTypeController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/productType/edit   --> goB2C/controllers/backend.(*ProductTypeController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/productType/goadd  --> goB2C/controllers/backend.(*ProductTypeController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/productType/goedit --> goB2C/controllers/backend.(*ProductTypeController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/productType/delete --> goB2C/controllers/backend.(*ProductTypeController).Delete-fm (6 handlers)
+[GIN-debug] GET    /admin/product            --> goB2C/controllers/backend.(*ProductController).Get-fm (6 handlers)
+[GIN-debug] GET    /admin/product/add        --> goB2C/controllers/backend.(*ProductController).Add-fm (6 handlers)
+[GIN-debug] GET    /admin/product/edit       --> goB2C/controllers/backend.(*ProductController).Edit-fm (6 handlers)
+[GIN-debug] POST   /admin/product/goadd      --> goB2C/controllers/backend.(*ProductController).GoAdd-fm (6 handlers)
+[GIN-debug] POST   /admin/product/goedit     --> goB2C/controllers/backend.(*ProductController).GoEdit-fm (6 handlers)
+[GIN-debug] GET    /admin/product/delete     --> goB2C/controllers/backend.(*ProductController).Delete-fm (6 handlers)
+[GIN-debug] POST   /admin/product/goUpload   --> goB2C/controllers/backend.(*ProductController).GoUpload-fm (6 handlers)
+[GIN-debug] GET    /admin/product/getProductTypeAttribute --> goB2C/controllers/backend.(*ProductController).GetProductTypeAttribute-fm (6 handlers)
+[GIN-debug] GET    /admin/product/changeProductImageColor --> goB2C/controllers/backend.(*ProductController).ChangeProductImageColor-fm (6 handlers)
+[GIN-debug] GET    /admin/product/removeProductImage --> goB2C/controllers/backend.(*ProductController).RemoveProductImage-fm (6 handlers)
+[GIN-debug] GET    /admin/setting            --> goB2C/controllers/backend.(*SettingController).Get-fm (6 handlers)
+[GIN-debug] POST   /admin/setting/goedit     --> goB2C/controllers/backend.(*SettingController).GoEdit-fm (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :6688
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2619232
+[GIN] 2024/09/06 - 12:43:37 | 200 |   16.222492ms |   120.227.57.10 | GET      "/mainPage"
+[GIN] 2024/09/06 - 12:43:38 | 200 |   23.753918ms |   120.227.57.10 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/06 - 12:43:38 | 200 |   23.780578ms |   120.227.57.10 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/06 - 12:43:38 | 200 |     664.995µs |   120.227.57.10 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/06 - 12:43:38 | 200 |     583.863µs |   120.227.57.10 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/06 - 12:43:38 | 200 |  180.642261ms |   120.227.57.10 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/06 - 12:43:39 | 200 |  1.124548201s |   120.227.57.10 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/06 - 12:43:40 | 200 |  1.818880321s |   120.227.57.10 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/06 - 12:43:40 | 200 |  1.874857477s |   120.227.57.10 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/06 - 12:43:40 | 200 |    23.66361ms |   120.227.57.10 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/06 - 12:43:41 | 200 |  1.241656411s |   120.227.57.10 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/06 - 12:43:42 | 200 |  1.649372361s |   120.227.57.10 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/06 - 12:43:43 | 200 |  1.133588681s |   120.227.57.10 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/06 - 12:43:43 | 200 |  815.080693ms |   120.227.57.10 | GET      "/static/frontend/image/pinghengche.jpg"
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:43:43 | 200 |    9.175242ms |   120.227.57.10 | GET      "/auth/login"
+[GIN] 2024/09/06 - 12:43:44 | 200 |   14.665047ms |   120.227.57.10 | GET      "/static/frontend/css/login.css"
+[GIN] 2024/09/06 - 12:43:44 | 404 |      53.821µs |   120.227.57.10 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     777.956µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     363.441µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     466.543µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     398.516µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     328.954µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/06 - 12:43:44 | 200 |     312.895µs |   120.227.57.10 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/06 - 12:43:44 | 404 |         711ns |   120.227.57.10 | GET      "/favicon.ico"
+[GIN] 2024/09/06 - 12:43:45 | 200 |    1.314961ms |   120.227.57.10 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/06 - 12:43:45 | 200 |  765.828693ms |   120.227.57.10 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/06 - 12:43:45 | 200 |  978.935974ms |   120.227.57.10 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/06 - 12:43:46 | 200 |   6.41011271s |   120.227.57.10 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/06 - 12:43:47 | 200 |     615.822µs |   120.227.57.10 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/06 - 12:43:49 | 200 |  2.872118579s |   120.227.57.10 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/06 - 12:43:49 | 200 |  2.266823711s |   120.227.57.10 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/06 - 12:43:50 | 200 |     935.521µs |   120.227.57.10 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/06 - 12:43:50 | 200 |     768.278µs |   120.227.57.10 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/06 - 12:43:51 | 200 |    1.605835ms |   120.227.57.10 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/06 - 12:43:51 | 200 |  3.686672255s |   120.227.57.10 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/06 - 12:43:51 | 200 |  5.017313481s |   120.227.57.10 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/06 - 12:43:51 | 200 |    1.006573ms |   120.227.57.10 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/06 - 12:43:51 | 200 |    1.642443ms |   120.227.57.10 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/06 - 12:43:52 | 200 |  774.131873ms |   120.227.57.10 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/06 - 12:43:57 | 200 | 16.202398357s |   120.227.57.10 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+2024/09/06 12:44:08 net/http: invalid Cookie.Domain "1.12.74.25:6688"; dropping domain attribute
+[GIN] 2024/09/06 - 12:44:08 | 200 |    14.86349ms |   120.227.57.10 | POST     "/auth/goLogin"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2505821
+[GIN] 2024/09/06 - 12:44:08 | 200 |   10.030132ms |   120.227.57.10 | GET      "/mainPage"
+[GIN] 2024/09/06 - 12:44:08 | 404 |       31.79µs |   120.227.57.10 | GET      "/static/frontend/image/yyymix.gif"
+[GIN-debug] redirecting request 301: /user/ --> /user/
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:44:18 | 200 |    7.596357ms |   120.227.57.10 | GET      "/user/"
+[GIN] 2024/09/06 - 12:44:18 | 200 |     444.573µs |   120.227.57.10 | GET      "/static/frontend/css/welcome.css"
+[GIN] 2024/09/06 - 12:44:18 | 200 |   89.429907ms |   120.227.57.10 | GET      "/static/public/img/avatar.png"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:44:22 | 200 |   45.433362ms |   120.227.57.10 | GET      "/user/order?order_status=0"
+[GIN] 2024/09/06 - 12:44:22 | 200 |    9.030762ms |   120.227.57.10 | GET      "/static/frontend/js/jqPaginator.js"
+[GIN] 2024/09/06 - 12:44:22 | 200 |    6.967961ms |   120.227.57.10 | GET      "/static/frontend/css/order.css"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:44:33 | 200 |    8.463701ms |   120.227.57.10 | GET      "/user/orderinfo?id=10"
+[GIN] 2024/09/06 - 12:44:44 | 500 |    5.667187ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:44:45 | 200 |  370.975817ms |   120.227.57.10 | GET      "/static/backend/bootstrap/css/bootstrap.css"
+[GIN] 2024/09/06 - 12:44:48 | 500 |    4.209037ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:44:50 | 500 |    4.417368ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:44:53 | 500 |    4.252027ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:44:59 | 200 |     3.27063ms |     81.71.5.172 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/06 - 12:45:01 | 500 |    8.314541ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2328438
+[GIN] 2024/09/06 - 12:45:06 | 200 |    9.489441ms |  220.196.160.61 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2421763
+[GIN] 2024/09/06 - 12:45:06 | 200 |    8.836398ms | 180.101.245.248 | GET      "/mainPage"
+[GIN] 2024/09/06 - 12:45:06 | 200 |       90.58µs |   106.52.79.248 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/06 - 12:45:06 | 200 |     132.216µs |  159.75.198.232 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/06 - 12:45:06 | 200 |     4.08223ms |    106.52.11.28 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      38.783µs |  111.230.181.75 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |    4.474534ms |    106.52.11.28 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      29.386µs |  111.230.181.75 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      39.383µs |   106.52.67.103 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      28.042µs |    106.52.11.28 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      40.386µs |  106.55.201.137 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |       26.91µs |   106.52.67.103 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      30.828µs |   106.52.67.103 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |     104.846µs |    106.52.11.28 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |    8.496001ms |  106.55.201.137 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      154.69µs |    106.52.11.28 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/06 - 12:45:06 | 200 |    4.123507ms |   106.52.67.103 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |    4.523937ms |    106.52.11.28 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/06 - 12:45:06 | 200 |     183.573µs |   106.52.67.103 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/06 - 12:45:06 | 200 |      72.525µs |   106.52.67.103 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/06 - 12:45:06 | 200 |   45.980166ms |    106.52.11.28 | GET      "/static/frontend/image/shouji.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2331674
+[GIN] 2024/09/06 - 12:45:06 | 200 |    9.207564ms | 180.101.245.250 | GET      "/"
+[GIN] 2024/09/06 - 12:45:06 | 200 |  249.069207ms |    106.52.11.28 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/06 - 12:45:07 | 200 |  1.477197872s |  111.230.181.75 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/06 - 12:45:09 | 200 |  2.132529669s |   106.52.67.103 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/06 - 12:45:10 | 200 |  3.039045793s |   106.55.200.47 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/06 - 12:45:11 | 200 |  4.660585202s |  106.55.201.137 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/06 - 12:45:11 | 200 |  4.829725545s |    106.52.11.28 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/06 - 12:45:11 | 200 |  5.367585292s |   106.55.200.47 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/06 - 12:45:11 | 200 |  4.462477214s |    106.52.11.28 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/06 - 12:45:12 | 500 |    5.606824ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:45:12 | 200 |    6.3510316s |   106.52.67.103 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/06 - 12:45:12 | 200 |  6.383184947s |  111.230.181.75 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/06 - 12:45:13 | 200 |  6.806138465s |  106.55.201.137 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/06 - 12:45:13 | 200 |  6.376520985s |    106.52.11.28 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/06 - 12:45:13 | 200 |  6.566267885s |  106.55.201.137 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/06 - 12:45:14 | 200 |    6.991375ms |  106.55.202.193 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/06 - 12:45:14 | 200 |     108.282µs | 180.101.245.250 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/06 - 12:45:14 | 200 |       47.76µs | 180.101.245.247 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/06 - 12:45:14 | 200 |     101.621µs |  180.101.244.14 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/06 - 12:45:14 | 200 |      39.264µs | 129.211.162.110 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/06 - 12:45:14 | 200 |   61.436634ms |   59.83.208.104 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/06 - 12:45:14 | 200 |  553.541207ms | 180.101.245.246 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/06 - 12:45:15 | 500 |    4.173732ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:45:17 | 200 |  1.947503514s | 180.101.245.246 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/06 - 12:45:17 | 200 |  3.201886285s | 180.101.245.247 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/06 - 12:45:17 | 200 |      64.951µs | 180.101.245.247 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |  2.471579725s | 180.101.245.250 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/06 - 12:45:18 | 200 |  379.081489ms | 180.101.245.247 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/06 - 12:45:18 | 200 |  2.590834822s |  180.101.244.14 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/06 - 12:45:18 | 404 |      17.002µs | 180.101.245.247 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |      51.938µs | 180.101.245.250 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |      36.068µs | 180.101.245.247 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |      39.714µs | 180.101.245.247 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |      50.394µs | 180.101.245.247 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/06 - 12:45:18 | 200 |  379.014803ms |  180.101.244.14 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/06 - 12:45:18 | 200 |      60.403µs | 180.101.245.247 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/06 - 12:45:19 | 200 |     213.018µs | 180.101.245.246 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/06 - 12:45:19 | 500 |    4.051663ms |   120.227.57.10 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:45:19 | 200 |   75.935781ms |  180.101.244.14 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/06 - 12:45:19 | 200 |  620.265798ms | 180.101.245.247 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/06 - 12:45:21 | 200 |   1.99467519s |  180.101.244.14 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/06 - 12:45:21 | 200 |      84.629µs | 180.101.245.246 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/06 - 12:45:21 | 200 |  7.159798736s | 129.211.162.110 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/06 - 12:45:21 | 200 |     135.764µs | 180.101.245.246 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/06 - 12:45:22 | 200 |  282.606275ms | 129.211.162.110 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/06 - 12:45:22 | 200 |   3.11945156s | 180.101.245.247 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/06 - 12:45:23 | 200 |     117.751µs | 180.101.245.246 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/06 - 12:45:23 | 200 |   548.48293ms | 180.101.245.247 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/06 - 12:45:23 | 200 |    2.2738327s |  180.101.244.14 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/06 - 12:45:24 | 200 |      149.53µs | 180.101.245.246 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/06 - 12:45:24 | 200 |  981.582619ms | 129.211.162.110 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/06 - 12:45:24 | 200 |   720.43804ms |  180.101.244.14 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/06 - 12:45:28 | 200 |  9.310819344s | 180.101.245.250 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/06 - 12:45:29 | 200 |  13.74480282s |   59.83.208.104 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/06 - 12:45:30 | 200 |    4.503349ms |  106.55.200.136 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/06 - 12:45:36 | 200 |      40.424µs |    14.152.83.62 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/06 - 12:45:36 | 200 |    3.928042ms |    14.152.83.62 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/06 - 12:45:36 | 200 |    3.989007ms |     14.17.90.86 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/06 - 12:45:36 | 200 |    6.323956ms |    59.36.125.52 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/06 - 12:45:36 | 200 |    6.473686ms |    59.36.125.44 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/06 - 12:45:36 | 200 |  235.806985ms |     14.17.90.64 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/06 - 12:45:38 | 200 |  1.876310469s |    59.36.125.52 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/06 - 12:45:38 | 200 |    2.1288489s |    59.36.125.88 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/06 - 12:45:39 | 200 |  1.893455157s |     14.17.90.86 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/06 - 12:45:39 | 200 |  3.202290662s |    59.36.125.44 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/06 - 12:45:40 | 200 |  4.174875671s |     14.17.90.71 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/06 - 12:45:42 | 200 |  6.510728629s |   59.36.125.108 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:45:43 | 200 |    7.840986ms |   120.227.57.10 | GET      "/auth/login"
+[GIN] 2024/09/06 - 12:45:43 | 200 |     121.467µs |   120.227.57.10 | GET      "/static/frontend/css/login.css"
+[GIN] 2024/09/06 - 12:45:43 | 200 |  7.440065816s |    59.36.125.37 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/06 - 12:45:43 | 200 |  7.603158209s |   59.36.125.108 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/06 - 12:45:45 | 200 |  1.859040287s |   120.227.57.10 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/06 - 12:45:45 | 404 |       1.814µs |   120.227.57.10 | GET      "/favicon.ico"
+[GIN] 2024/09/06 - 12:45:53 | 200 |      78.035µs |    118.89.20.66 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/06 - 12:45:57 | 200 |   16.026265ms |    42.194.133.9 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/06 - 12:46:00 | 200 |    8.958546ms |    106.52.11.28 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/06 - 12:46:09 | 404 |       37.28µs |  106.55.202.140 | GET      "/static/frontend/image/yyymix.gif"
+[GIN-debug] redirecting request 301: /admin/ --> /admin/
+get cookie failed http: named cookie not present
+get cookie failed http: named cookie not present
+error redicet:  /admin/login
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 302 with 200
+[GIN] 2024/09/06 - 12:46:16 | 302 |    3.538513ms |   120.227.57.10 | GET      "/admin/"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:46:16 | 200 |    7.468098ms |   120.227.57.10 | GET      "/admin/login"
+[GIN] 2024/09/06 - 12:46:16 | 200 |     479.237µs |   120.227.57.10 | GET      "/static/backend/css/login.css"
+[GIN] 2024/09/06 - 12:46:16 | 200 |     576.719µs |   120.227.57.10 | GET      "/static/backend/images/login_btn.jpg"
+[GIN] 2024/09/06 - 12:46:16 | 200 |   23.661535ms |   120.227.57.10 | GET      "/static/backend/images/login_bg.jpg"
+[GIN] 2024/09/06 - 12:46:49 | 200 |      97.122µs | 193.112.129.180 | GET      "/static/frontend/image/hjh_01.gif"
+get cookie failed http: named cookie not present
+2024/09/06 12:46:59 net/http: invalid Cookie.Domain "1.12.74.25:6688"; dropping domain attribute
+success redicet:  /admin
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 302
+[GIN] 2024/09/06 - 12:46:59 | 200 |    4.254944ms | 223.104.132.145 | POST     "/admin/login/gologin"
+[GIN] 2024/09/06 - 12:46:59 | 200 |  104.554274ms | 223.104.132.145 | GET      "/static/backend/bootstrap/css/bootstrap.css"
+[GIN] 2024/09/06 - 12:47:02 | 200 |    5.069749ms | 223.104.132.145 | GET      "/admin/"
+[GIN] 2024/09/06 - 12:47:02 | 200 |     522.889µs | 223.104.132.145 | GET      "/static/backend/css/basic.css"
+[GIN] 2024/09/06 - 12:47:02 | 200 |   17.947421ms | 223.104.132.145 | GET      "/static/backend/bootstrap/js/bootstrap.min.js"
+[GIN] 2024/09/06 - 12:47:02 | 200 |   13.552013ms | 223.104.132.145 | GET      "/static/public/img/logo_top.png"
+[GIN] 2024/09/06 - 12:47:02 | 200 |    13.99895ms | 223.104.132.145 | GET      "/static/backend/js/base.js"
+[GIN] 2024/09/06 - 12:47:02 | 200 |  296.332817ms | 223.104.132.145 | GET      "/static/backend/bootstrap/js/jquery-1.10.1.js"
+[GIN] 2024/09/06 - 12:47:02 | 200 |     3.38188ms | 223.104.132.145 | GET      "/admin/welcome"
+[GIN] 2024/09/06 - 12:47:07 | 500 |    4.110793ms | 223.104.132.145 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:47:10 | 200 |    7.201688ms |  106.55.201.161 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/06 - 12:47:19 | 200 |   19.823763ms |  106.55.202.140 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/06 - 12:47:21 | 200 |   28.111713ms |  106.55.201.130 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/06 - 12:47:24 | 200 |   12.027771ms | 193.112.129.180 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/06 - 12:47:29 | 200 |    3.129337ms | 193.112.170.234 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/06 - 12:47:52 | 200 |   12.017462ms |    118.89.20.66 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/06 - 12:47:53 | 200 |    3.005375ms |  129.204.249.78 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/06 - 12:47:53 | 200 |  261.600451ms |  106.55.201.130 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/06 - 12:49:02 | 200 |   14.233198ms |  106.55.201.130 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/06 - 12:49:44 | 200 |     140.272µs |  106.55.201.137 | GET      "/static/frontend/image/logo_top.png"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2465193
+[GIN] 2024/09/06 - 12:50:51 | 200 |    9.568458ms | 223.104.132.145 | GET      "/mainPage"
+[GIN] 2024/09/06 - 12:50:51 | 404 |      19.316µs | 223.104.132.145 | GET      "/static/frontend/image/yyymix.gif"
+2024/09/06 12:50:54 net/http: invalid Cookie.Domain "1.12.74.25:6688"; dropping domain attribute
+[GIN] 2024/09/06 - 12:50:54 | 302 |       69.11µs | 223.104.132.145 | GET      "/auth/loginOut"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2422113
+[GIN] 2024/09/06 - 12:50:54 | 200 |    9.158151ms | 223.104.132.145 | GET      "/mainPage"
+[GIN] 2024/09/06 - 12:50:54 | 404 |      19.366µs | 223.104.132.145 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/06 - 12:50:59 | 200 |     122.969µs |  106.55.202.193 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/06 - 12:51:02 | 500 |    4.173231ms | 223.104.132.145 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:51:06 | 500 |    6.302425ms | 223.104.132.145 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN] 2024/09/06 - 12:51:09 | 500 |    4.255515ms | 223.104.132.145 | GET      "/admin/login"
+Error #01: 没有权限
+[GIN-debug] redirecting request 301: /admin/ --> /admin/
+[GIN] 2024/09/06 - 12:51:10 | 200 |     5.30576ms | 223.104.132.145 | GET      "/admin/"
+[GIN] 2024/09/06 - 12:51:10 | 200 |      65.804µs | 223.104.132.145 | GET      "/static/backend/css/basic.css"
+[GIN] 2024/09/06 - 12:51:10 | 200 |      102.33µs | 223.104.132.145 | GET      "/static/public/img/logo_top.png"
+[GIN] 2024/09/06 - 12:51:10 | 200 |  124.370292ms | 223.104.132.145 | GET      "/static/backend/bootstrap/js/jquery-1.10.1.js"
+[GIN] 2024/09/06 - 12:51:10 | 200 |      86.331µs | 223.104.132.145 | GET      "/static/backend/js/base.js"
+[GIN] 2024/09/06 - 12:51:10 | 200 |   36.141533ms | 223.104.132.145 | GET      "/static/backend/bootstrap/js/bootstrap.min.js"
+[GIN] 2024/09/06 - 12:51:11 | 200 |    3.453172ms | 223.104.132.145 | GET      "/admin/welcome"
+2024/09/06 12:51:13 net/http: invalid Cookie.Domain "1.12.74.25:6688"; dropping domain attribute
+success redicet:  /admin/login
+[GIN] 2024/09/06 - 12:51:13 | 200 |     3.47827ms | 223.104.132.145 | GET      "/admin/login/loginout"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:51:16 | 200 |    7.970538ms | 223.104.132.145 | GET      "/admin/login"
+[GIN] 2024/09/06 - 12:51:16 | 200 |      67.607µs | 223.104.132.145 | GET      "/static/backend/css/login.css"
+[GIN] 2024/09/06 - 12:51:16 | 200 |     166.783µs | 223.104.132.145 | GET      "/static/backend/images/login_bg.jpg"
+[GIN] 2024/09/06 - 12:51:16 | 200 |      52.408µs | 223.104.132.145 | GET      "/static/backend/images/login_btn.jpg"
+[GIN-debug] redirecting request 301: /admin/ --> /admin/
+get cookie failed http: named cookie not present
+get cookie failed http: named cookie not present
+error redicet:  /admin/login
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 302 with 200
+[GIN] 2024/09/06 - 12:51:39 | 302 |    3.477299ms |  220.196.160.95 | GET      "/admin/"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:51:39 | 200 |    6.365674ms |  220.196.160.75 | GET      "/admin/login"
+[GIN] 2024/09/06 - 12:51:49 | 200 |   12.003867ms |    118.89.20.66 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/06 - 12:51:51 | 200 |   34.383913ms |  193.112.153.14 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/06 - 12:52:54 | 200 |   19.568565ms |  106.55.202.140 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+get cookie failed http: named cookie not present
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 302 with 200
+[GIN] 2024/09/06 - 12:53:28 | 302 |    7.764191ms |  220.196.160.75 | GET      "/user/"
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:53:28 | 200 |    6.200835ms |   59.83.208.105 | GET      "/auth/login"
+[GIN] 2024/09/06 - 12:53:40 | 200 |      78.186µs |   106.55.200.47 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:53:40 | 200 |      59.041µs | 114.132.203.162 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:53:40 | 200 |      87.404µs |    59.36.125.58 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/06 - 12:53:56 | 200 |   12.278279ms |  182.254.171.71 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/06 - 12:54:14 | 200 |    87.69472ms |  106.55.201.130 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/06 - 12:54:28 | 200 |   28.268337ms |  106.55.200.105 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/06 - 12:54:30 | 200 |      90.299µs |    42.194.133.9 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/06 - 12:54:30 | 200 |      74.129µs | 114.132.203.214 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/06 - 12:54:30 | 200 |      57.908µs |   59.36.125.102 | GET      "/static/frontend/image/hjh_05.gif"
+get cookie failed http: named cookie not present
+get cookie failed http: named cookie not present
+error redicet:  /admin/login
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 302 with 200
+[GIN] 2024/09/06 - 12:56:21 | 302 |    3.487316ms |  180.101.244.16 | GET      "/admin/"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 12:56:21 | 200 |    8.717485ms |  220.196.160.51 | GET      "/admin/login"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 13:03:27 | 200 |    6.781021ms | 223.104.132.145 | GET      "/admin/login"
+[GIN] 2024/09/06 - 13:03:27 | 404 |       1.563µs | 223.104.132.145 | GET      "/favicon.ico"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/06 - 13:03:33 | 200 |    6.827238ms | 223.104.132.145 | GET      "/admin/login"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2341643
+[GIN] 2024/09/06 - 13:03:35 | 200 |   11.251838ms | 223.104.132.145 | GET      "/mainPage"
+[GIN] 2024/09/06 - 13:03:35 | 404 |       21.34µs | 223.104.132.145 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/06 - 13:06:39 | 200 |    4.599739ms |  106.55.202.140 | GET      "/static/public/img/avatar.png"
+[GIN] 2024/09/06 - 13:06:39 | 200 |    5.301031ms |  114.132.203.61 | GET      "/static/public/img/avatar.png"
+[GIN] 2024/09/06 - 13:06:39 | 200 |    6.050634ms |    59.36.125.14 | GET      "/static/public/img/avatar.png"
+[GIN] 2024/09/06 - 13:12:09 | 200 |      92.253µs |  106.55.202.193 | GET      "/static/public/img/logo_top.png"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/08 07:06:55 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2696287
+[GIN] 2024/09/08 - 07:06:55 | 200 |   10.532774ms |  87.236.176.153 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2372941
+[GIN] 2024/09/08 - 07:15:28 | 200 |    9.465948ms | 220.196.160.151 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2412986
+[GIN] 2024/09/08 - 07:15:28 | 200 |    9.396358ms | 129.211.162.110 | GET      "/"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      101.35µs |   106.52.65.240 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/08 - 07:15:28 | 200 |    2.426972ms |   106.52.106.57 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |     121.958µs |   106.52.106.57 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      41.057µs |  106.55.201.161 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      28.233µs |   106.52.106.57 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      39.344µs |  106.55.201.161 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      37.039µs | 193.112.129.180 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      28.884µs |   106.52.106.57 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      38.663µs | 193.112.129.180 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      33.853µs |   106.52.106.57 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |     110.798µs |   106.52.106.57 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |    7.029607ms |  106.55.201.161 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |     107.311µs |   106.52.106.57 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      63.198µs |  106.52.123.222 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/08 - 07:15:28 | 200 |    2.375887ms |   106.52.106.57 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/08 - 07:15:28 | 200 |     6.10703ms | 193.112.129.180 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/08 - 07:15:28 | 200 |      75.292µs | 193.112.129.180 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2538332
+[GIN] 2024/09/08 - 07:15:28 | 200 |   10.914248ms |  220.196.160.73 | GET      "/"
+[GIN] 2024/09/08 - 07:15:29 | 200 |  361.481157ms |  106.55.200.151 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/08 - 07:15:29 | 200 |   881.75533ms | 193.112.129.180 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/08 - 07:15:30 | 200 |  1.145826104s |  106.55.200.151 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/08 - 07:15:30 | 200 |  2.161041983s |  106.55.201.161 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/08 - 07:15:31 | 200 |  1.940416466s |   106.52.106.57 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/08 - 07:15:31 | 200 |   2.64662852s | 193.112.129.180 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/08 - 07:15:32 | 200 |   3.43212933s |  106.55.201.161 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/08 - 07:15:32 | 200 |   3.68094996s |  106.55.201.161 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/08 - 07:15:33 | 200 |  3.862240082s |   193.112.32.91 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/08 - 07:15:33 | 200 |  4.058550981s |   106.52.106.57 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/08 - 07:15:34 | 200 |  4.465477828s |   193.112.32.91 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/08 - 07:15:35 | 200 |  6.332684036s |   106.52.106.57 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/08 - 07:15:35 | 200 |  6.535128624s |   193.112.32.91 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/08 - 07:15:35 | 200 |  6.942873443s |   106.52.106.57 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/08 - 07:15:36 | 200 |     137.116µs |  220.196.160.96 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/08 - 07:15:36 | 200 |      51.236µs | 220.196.160.154 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/08 - 07:15:36 | 200 |      64.531µs |  220.196.160.61 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/08 - 07:15:36 | 200 |      80.149µs | 220.196.160.154 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/08 - 07:15:36 | 200 |   54.804077ms |  220.196.160.83 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/08 - 07:15:36 | 200 |  7.945460135s |  106.55.201.161 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/08 - 07:15:37 | 200 |  574.562105ms |  220.196.160.96 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/08 - 07:15:38 | 200 |  1.917648883s |  220.196.160.73 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/08 - 07:15:39 | 200 |  606.194339ms |  220.196.160.73 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/08 - 07:15:39 | 200 |  2.217842497s |  220.196.160.96 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/08 - 07:15:39 | 200 |      69.891µs |  220.196.160.73 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/08 - 07:15:39 | 200 |      80.711µs |  220.196.160.73 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/08 - 07:15:39 | 200 |      64.921µs |  220.196.160.73 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/08 - 07:15:40 | 200 |     159.919µs |  220.196.160.96 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/08 - 07:15:40 | 404 |      32.871µs |  220.196.160.96 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/08 - 07:15:41 | 200 |   4.78931084s |  220.196.160.61 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/08 - 07:15:41 | 200 |   2.85515956s | 220.196.160.154 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/08 - 07:15:41 | 200 |        69.4µs | 220.196.160.154 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/08 - 07:15:41 | 200 |      74.159µs | 220.196.160.154 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/08 - 07:15:41 | 200 |      68.628µs | 220.196.160.154 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/08 - 07:15:42 | 200 |   59.394569ms | 220.196.160.154 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/08 - 07:15:42 | 200 |  822.365309ms |  220.196.160.61 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/08 - 07:15:44 | 200 |  4.231314272s |  220.196.160.73 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/08 - 07:15:44 | 200 |  6.006799124s | 220.196.160.154 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/08 - 07:15:45 | 200 |  4.995321782s |  220.196.160.96 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/08 - 07:15:45 | 200 |      97.172µs | 220.196.160.154 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/08 - 07:15:46 | 200 |  7.544590223s |  220.196.160.83 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/08 - 07:15:46 | 200 |   4.22007225s | 220.196.160.154 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/08 - 07:15:46 | 200 |     149.609µs |  220.196.160.96 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/08 - 07:15:46 | 200 |      133.21µs |  220.196.160.96 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/08 - 07:15:46 | 200 |   59.300624ms | 220.196.160.154 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/08 - 07:15:47 | 200 |     132.698µs |  220.196.160.96 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/08 - 07:15:47 | 200 |  207.160744ms | 220.196.160.154 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/08 - 07:15:47 | 200 |  177.761879ms | 220.196.160.154 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/08 - 07:15:48 | 200 |  744.951992ms |  220.196.160.96 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/08 - 07:15:49 | 200 |  6.278750299s |  220.196.160.61 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/08 - 07:15:50 | 200 |  4.371163919s | 220.196.160.154 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2532361
+[GIN] 2024/09/08 - 07:30:54 | 200 |    9.770417ms |  220.196.160.53 | GET      "/"
+[GIN] 2024/09/08 - 07:30:54 | 200 |     131.577µs |  220.196.160.53 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/08 - 07:30:54 | 200 |      49.954µs |  220.196.160.45 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/08 - 07:30:54 | 200 |       74.81µs |  220.196.160.75 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/08 - 07:30:54 | 200 |      51.356µs | 220.196.160.125 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/08 - 07:30:54 | 200 |   57.431692ms |  220.196.160.95 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/08 - 07:30:54 | 200 |  554.800445ms |  220.196.160.53 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/08 - 07:30:55 | 200 |   829.92056ms | 220.196.160.125 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/08 - 07:30:56 | 200 |  857.520597ms | 220.196.160.125 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/08 - 07:30:56 | 200 |  1.421875164s |  220.196.160.53 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/08 - 07:30:58 | 200 |  4.038508303s | 220.196.160.146 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/08 - 07:30:58 | 200 |      224.05µs | 220.196.160.146 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/08 - 07:30:58 | 200 |      82.123µs |  220.196.160.53 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/08 - 07:30:59 | 200 |     157.355µs | 220.196.160.146 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/08 - 07:31:00 | 200 |     130.475µs | 220.196.160.146 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/08 - 07:31:00 | 200 |      73.937µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/08 - 07:31:00 | 200 |      72.266µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/08 - 07:31:00 | 200 |  1.661713223s |  220.196.160.75 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/08 - 07:31:00 | 200 |      63.098µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/08 - 07:31:00 | 200 |      66.304µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/08 - 07:31:00 | 200 |     147.015µs |  220.196.160.53 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/08 - 07:31:00 | 404 |      20.138µs | 220.196.160.146 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/08 - 07:31:00 | 200 |      165.29µs | 220.196.160.146 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/08 - 07:31:00 | 200 |     152.735µs |  220.196.160.75 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/08 - 07:31:00 | 200 |     170.047µs | 220.196.160.146 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/08 - 07:31:00 | 200 |     180.357µs |  220.196.160.75 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/08 - 07:31:01 | 200 |      71.252µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/08 - 07:31:01 | 200 |     120.767µs | 220.196.160.146 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/08 - 07:31:01 | 200 |       69.65µs | 220.196.160.146 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/08 - 07:31:01 | 200 |   3.49063953s |  220.196.160.95 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/08 - 07:31:02 | 200 |  1.225598916s |  220.196.160.75 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/08 - 07:31:03 | 200 |  159.101059ms |  220.196.160.75 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/08 - 07:31:03 | 200 |     129.754µs |  220.196.160.75 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/08 - 07:31:06 | 200 |   2.45369656s |  220.196.160.75 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/08 - 07:31:06 | 200 |  4.766813135s | 220.196.160.146 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/08 - 07:31:08 | 200 |  9.402334878s | 220.196.160.125 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/08 - 07:31:08 | 200 |   9.72625009s |  220.196.160.45 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/08 - 07:31:10 | 404 |       1.593µs |  220.196.160.95 | GET      "/favicon.ico"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/09 16:41:55 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2477206
+[GIN] 2024/09/09 - 16:41:55 | 200 |  172.898624ms |  120.227.56.178 | GET      "/mainPage"
+[GIN] 2024/09/09 - 16:41:55 | 404 |    1.405249ms |  120.227.56.178 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/09 - 16:41:56 | 404 |       2.084µs |  120.227.56.178 | GET      "/favicon.ico"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/09 - 16:45:02 | 200 |    7.320731ms |  120.227.56.178 | GET      "/admin/login"
+[GIN] 2024/09/09 - 16:45:03 | 404 |       2.043µs |  120.227.56.178 | GET      "/favicon.ico"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/10 18:50:17 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2471786
+[GIN] 2024/09/10 - 18:50:17 | 200 |    10.59558ms |  185.242.226.50 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2533573
+[GIN] 2024/09/10 - 18:57:10 | 200 |   10.366592ms | 220.196.160.124 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 4308964
+[GIN] 2024/09/10 - 18:57:10 | 200 |   12.138367ms | 180.101.245.252 | GET      "/"
+[GIN] 2024/09/10 - 18:57:10 | 200 |   13.894995ms |  159.75.198.113 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/10 - 18:57:10 | 200 |     110.197µs |  159.75.198.232 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2392428
+[GIN] 2024/09/10 - 18:57:10 | 200 |    9.910438ms | 220.196.160.117 | GET      "/"
+[GIN] 2024/09/10 - 18:57:11 | 200 |    2.662193ms | 220.196.160.117 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/10 - 18:57:11 | 200 |     113.131µs | 220.196.160.124 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/10 - 18:57:11 | 200 |     901.939µs |  220.196.160.84 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/10 - 18:57:11 | 200 |    1.973854ms |  220.196.160.45 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/10 - 18:57:11 | 200 |    64.18219ms |  220.196.160.96 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/10 - 18:57:11 | 200 |   66.887985ms | 220.196.160.117 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/10 - 18:57:12 | 200 |   1.04532388s |  220.196.160.76 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/10 - 18:57:12 | 200 |     1.18627ms |  220.196.160.96 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/10 - 18:57:12 | 200 |  1.479100365s |  220.196.160.45 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/10 - 18:57:13 | 200 |  814.320334ms |  220.196.160.45 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/10 - 18:57:14 | 200 |  1.681067937s |  220.196.160.76 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/10 - 18:57:14 | 404 |      35.165µs |  220.196.160.76 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/10 - 18:57:14 | 200 |     501.899µs |  220.196.160.96 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/10 - 18:57:14 | 200 |     496.088µs |  220.196.160.76 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/10 - 18:57:15 | 200 |       599.1µs |  220.196.160.76 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/10 - 18:57:15 | 200 |     423.863µs |  220.196.160.96 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/10 - 18:57:15 | 200 |  623.557471ms |  220.196.160.45 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/10 - 18:57:15 | 200 |       486.8µs |  220.196.160.96 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/10 - 18:57:15 | 200 |     466.082µs |  220.196.160.96 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/10 - 18:57:15 | 200 |     879.416µs |  220.196.160.96 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/10 - 18:57:16 | 200 |    1.361177ms |  220.196.160.96 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/10 - 18:57:17 | 200 |  2.434567742s |  220.196.160.45 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/10 - 18:57:18 | 200 |  3.481485044s |  220.196.160.76 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/10 - 18:57:19 | 200 |      710.58µs |  220.196.160.76 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/10 - 18:57:19 | 200 |  1.725441535s |  220.196.160.45 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/10 - 18:57:20 | 200 |   228.81525ms |  220.196.160.45 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/10 - 18:57:20 | 200 |   66.207411ms |  220.196.160.45 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/10 - 18:57:21 | 200 |   66.716733ms |  220.196.160.45 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/10 - 18:57:21 | 200 |  196.355229ms |  220.196.160.45 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/10 - 18:57:21 | 200 |  3.123232705s |  220.196.160.96 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/10 - 18:57:21 | 200 |  130.978232ms |  220.196.160.45 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/10 - 18:57:21 | 200 |  2.055666448s |  220.196.160.76 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/10 - 18:57:22 | 200 |     725.588µs |  220.196.160.76 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/10 - 18:57:23 | 200 | 11.047404762s | 220.196.160.124 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/10 - 18:57:23 | 200 |  1.799372551s |  220.196.160.45 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/10 - 18:57:28 | 200 | 15.557142155s |  220.196.160.84 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/10 - 18:57:32 | 200 |    8.804829ms |   106.55.200.45 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/10 - 18:57:32 | 200 |    8.976671ms |   106.55.200.45 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/10 - 18:57:34 | 200 |  1.227488239s |   106.55.200.45 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/10 - 18:57:34 | 200 |  2.112445744s |     14.17.90.17 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/10 - 18:57:35 | 200 |   2.90932612s |     14.17.90.71 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/10 - 18:57:35 | 200 |  3.062390477s |    59.36.125.73 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/10 - 18:57:36 | 200 |  3.740881931s |    59.36.125.58 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/10 - 18:57:37 | 200 |  4.727531208s |   106.55.200.45 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/10 - 18:57:38 | 200 |  5.354119209s |   106.55.200.45 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/10 - 18:57:38 | 200 |   5.52340157s |    59.36.125.51 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/10 - 18:57:38 | 200 |   6.07005938s |   59.36.125.108 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/10 - 18:57:39 | 200 |  6.103947353s |    59.36.125.73 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/10 - 18:57:39 | 200 |  6.232314239s |    59.36.125.54 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/10 - 18:57:39 | 200 |  6.430735355s |   106.55.200.45 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/10 - 18:57:39 | 200 |  6.438198212s |   106.55.200.45 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/10 - 18:57:39 | 200 |  6.574029337s |   106.55.200.45 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/11 17:34:06 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2440867
+[GIN] 2024/09/11 - 17:34:06 | 200 |   71.520987ms |  87.236.176.147 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2416784
+[GIN] 2024/09/11 - 20:51:35 | 200 |   16.556709ms | 162.216.241.154 | GET      "/"
+[GIN] 2024/09/11 - 20:51:36 | 404 |       1.824µs | 162.216.241.154 | OPTIONS  "/"
+[GIN] 2024/09/11 - 20:52:06 | 404 |       1.603µs | 162.216.241.154 | GET      "/nice ports,/Trinity.txt.bak"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2961673
+[GIN] 2024/09/11 - 20:54:34 | 200 |    9.901743ms | 162.216.241.154 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2418146
+[GIN] 2024/09/11 - 20:54:46 | 200 |   10.320466ms | 162.216.241.154 | GET      "/"
+[GIN] 2024/09/11 - 20:54:46 | 404 |       1.853µs | 162.216.241.154 | GET      "/favicon.ico"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2659999
+[GIN] 2024/09/11 - 20:55:11 | 200 |   10.372354ms | 162.216.241.154 | GET      "/"
+[GIN] 2024/09/11 - 20:55:11 | 200 |     5.96277ms | 162.216.241.154 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/11 - 20:55:11 | 200 |    1.640349ms | 162.216.241.154 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/11 - 20:55:11 | 200 |     451.926µs | 162.216.241.154 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/11 - 20:55:12 | 200 |  818.875588ms | 162.216.241.154 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/11 - 20:55:12 | 200 |  822.754087ms | 162.216.241.154 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/11 - 20:55:12 | 200 |    1.520216ms | 162.216.241.154 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/11 - 20:55:12 | 200 |    4.850328ms | 162.216.241.154 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/11 - 20:55:13 | 200 |  268.850407ms | 162.216.241.154 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/11 - 20:55:15 | 200 |    1.658644ms | 162.216.241.154 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/11 - 20:55:15 | 200 |    1.012935ms | 162.216.241.154 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/11 - 20:55:15 | 200 |     638.724µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/11 - 20:55:15 | 200 |  2.865473502s | 162.216.241.154 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/11 - 20:55:16 | 200 |      497.18µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/11 - 20:55:16 | 200 |      651.81µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/11 - 20:55:16 | 200 |     506.548µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/11 - 20:55:16 | 404 |       21.34µs | 162.216.241.154 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/11 - 20:55:16 | 200 |      443.44µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/11 - 20:55:16 | 200 |     405.809µs | 162.216.241.154 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/11 - 20:55:17 | 200 |  4.574341683s | 162.216.241.154 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/11 - 20:55:17 | 200 |  1.022591048s | 162.216.241.154 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/11 - 20:55:18 | 200 |    2.264929ms | 162.216.241.154 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/11 - 20:55:18 | 200 |  268.372281ms | 162.216.241.154 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/11 - 20:55:20 | 200 |  7.039680763s | 162.216.241.154 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/11 - 20:55:20 | 200 |    2.690456ms | 162.216.241.154 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/11 - 20:55:21 | 200 |     616.013µs | 162.216.241.154 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/11 - 20:55:21 | 200 |    1.123623ms | 162.216.241.154 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/11 - 20:55:21 | 200 |  3.400350781s | 162.216.241.154 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/11 - 20:55:22 | 200 |     1.02065ms | 162.216.241.154 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/11 - 20:55:22 | 200 |     671.937µs | 162.216.241.154 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/11 - 20:55:22 | 200 |  243.137302ms | 162.216.241.154 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/11 - 20:55:22 | 200 |    1.514374ms | 162.216.241.154 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/11 - 20:55:23 | 200 | 10.012188022s | 162.216.241.154 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/11 - 20:55:23 | 200 |    1.073911ms | 162.216.241.154 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/11 - 20:55:23 | 200 |  7.164200387s | 162.216.241.154 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/11 - 20:55:26 | 200 |  3.272903769s | 162.216.241.154 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/11 - 20:55:31 | 200 | 10.869486922s | 162.216.241.154 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/12 - 01:32:42 | 404 |       1.563µs |    106.14.33.57 | HEAD     "/start/index.html"
+[GIN] 2024/09/12 - 01:32:43 | 404 |         611ns |    106.14.33.57 | HEAD     "/pscc/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/14 06:03:03 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2425764
+[GIN] 2024/09/14 - 06:03:03 | 200 |   23.527997ms |  87.236.176.155 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2503722
+[GIN] 2024/09/14 - 06:05:28 | 200 |    9.780114ms |  220.196.160.95 | GET      "/"
+[GIN] 2024/09/14 - 06:05:28 | 200 |     473.433µs |   106.52.109.61 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2442306
+[GIN] 2024/09/14 - 06:05:28 | 200 |   10.839239ms |  180.101.244.12 | GET      "/"
+[GIN] 2024/09/14 - 06:05:28 | 200 |      85.912µs |   106.52.79.248 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2916460
+[GIN] 2024/09/14 - 06:05:29 | 200 |   10.570984ms | 220.196.160.125 | GET      "/"
+[GIN] 2024/09/14 - 06:05:29 | 200 |    1.154868ms | 220.196.160.125 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/14 - 06:05:29 | 200 |      46.538µs |  220.196.160.51 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/14 - 06:05:29 | 200 |     792.113µs |  220.196.160.73 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/14 - 06:05:29 | 200 |     849.963µs | 220.196.160.154 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/14 - 06:05:29 | 200 |   58.891627ms |  220.196.160.95 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/14 - 06:05:29 | 200 |   52.516625ms | 220.196.160.125 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/14 - 06:05:30 | 200 |  848.555606ms |  220.196.160.51 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/14 - 06:05:31 | 200 |     220.365µs |  220.196.160.51 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/14 - 06:05:32 | 200 |     178.327µs |  220.196.160.51 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/14 - 06:05:32 | 200 |  1.225095342s | 220.196.160.125 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/14 - 06:05:32 | 200 |     220.827µs |  220.196.160.51 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/14 - 06:05:33 | 404 |      31.669µs | 220.196.160.125 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/14 - 06:05:33 | 200 |     573.713µs | 220.196.160.125 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/14 - 06:05:33 | 200 |      652.77µs | 220.196.160.125 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/14 - 06:05:33 | 200 |  3.866390854s |  220.196.160.51 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/14 - 06:05:33 | 200 |     436.112µs | 220.196.160.125 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/14 - 06:05:33 | 200 |     463.303µs |  220.196.160.51 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/14 - 06:05:34 | 200 |      662.56µs |  220.196.160.51 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/14 - 06:05:34 | 200 |     737.231µs |  220.196.160.51 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/14 - 06:05:34 | 200 |    1.120393ms |  220.196.160.51 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/14 - 06:05:34 | 200 |  153.934434ms |  220.196.160.51 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/14 - 06:05:34 | 200 |  3.828165659s |  220.196.160.95 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/14 - 06:05:35 | 200 |     1.88288ms |  220.196.160.95 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/14 - 06:05:36 | 200 |  1.626090364s |  220.196.160.51 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/14 - 06:05:36 | 200 |  2.013601499s |  220.196.160.51 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/14 - 06:05:37 | 200 |  123.563782ms |  220.196.160.51 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/14 - 06:05:37 | 200 |   62.124563ms |  220.196.160.51 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/14 - 06:05:37 | 200 |   62.555765ms |  220.196.160.51 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/14 - 06:05:38 | 200 |  123.595312ms |  220.196.160.51 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/14 - 06:05:38 | 200 |  154.327857ms |  220.196.160.51 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/14 - 06:05:39 | 200 |    1.138285ms |  220.196.160.51 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/14 - 06:05:39 | 200 |  1.474158977s |  220.196.160.51 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/14 - 06:05:40 | 200 |  6.797061559s | 220.196.160.125 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/14 - 06:05:41 | 200 |  6.117705484s |  220.196.160.95 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/14 - 06:05:46 | 200 |  15.41283398s |  220.196.160.73 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/14 - 06:05:46 | 200 | 15.615845142s | 220.196.160.154 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2363066
+[GIN] 2024/09/14 - 09:38:17 | 200 |   10.494861ms |   59.83.208.103 | GET      "/"
+[GIN] 2024/09/14 - 09:38:19 | 200 |     160.382µs |   59.83.208.103 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/14 - 09:38:19 | 200 |      132.27µs |   59.83.208.105 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/14 - 09:38:19 | 200 |       84.63µs |   59.83.208.104 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/14 - 09:38:19 | 200 |      57.619µs |   59.83.208.108 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/14 - 09:38:19 | 200 |   71.542855ms | 180.101.245.251 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/14 - 09:38:19 | 200 |  124.396697ms |   59.83.208.105 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/14 - 09:38:20 | 200 |  427.478328ms | 180.101.245.251 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/14 - 09:38:20 | 200 |   1.15528761s |   59.83.208.105 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/14 - 09:38:21 | 404 |      20.799µs |   59.83.208.105 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/14 - 09:38:21 | 200 |     194.326µs | 180.101.245.251 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/14 - 09:38:21 | 200 |   98.735394ms |   59.83.208.105 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/14 - 09:38:21 | 200 |     175.101µs | 180.101.245.251 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/14 - 09:38:21 | 200 |     266.803µs | 180.101.245.251 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/14 - 09:38:22 | 200 |     178.676µs | 180.101.245.251 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/14 - 09:38:22 | 200 |     149.411µs |   59.83.208.105 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/14 - 09:38:22 | 200 |     154.442µs | 180.101.245.251 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/14 - 09:38:22 | 200 |      71.325µs |   59.83.208.105 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/14 - 09:38:23 | 200 |  2.433099585s |   59.83.208.103 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/14 - 09:38:23 | 200 |      82.666µs |   59.83.208.105 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/14 - 09:38:23 | 200 |     171.033µs |   59.83.208.105 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/14 - 09:38:23 | 200 |      66.846µs |   59.83.208.103 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/14 - 09:38:23 | 200 |      73.498µs |   59.83.208.103 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/14 - 09:38:24 | 200 |      70.412µs |   59.83.208.103 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/14 - 09:38:24 | 200 |      81.564µs |   59.83.208.103 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/14 - 09:38:24 | 200 |  4.332827299s |   59.83.208.104 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/14 - 09:38:25 | 200 |  4.577252266s |   59.83.208.105 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/14 - 09:38:25 | 200 |  463.321672ms |   59.83.208.105 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/14 - 09:38:26 | 200 |     144.432µs |   59.83.208.105 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/14 - 09:38:27 | 200 |     297.721µs |   59.83.208.105 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/14 - 09:38:29 | 200 |  2.040869558s |   59.83.208.105 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/14 - 09:38:29 | 200 |     111.882µs |   59.83.208.105 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/14 - 09:38:29 | 200 |  6.969704469s | 180.101.245.251 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/14 - 09:38:30 | 200 |  5.739857374s |   59.83.208.103 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/14 - 09:38:31 | 200 |  5.703412667s |   59.83.208.104 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/14 - 09:38:31 | 200 |  1.934398857s |   59.83.208.105 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/14 - 09:38:40 | 200 | 19.912424381s |   59.83.208.108 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/17 13:47:49 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2846618
+[GIN] 2024/09/17 - 13:47:49 | 200 |   11.892648ms |  87.236.176.178 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2450571
+[GIN] 2024/09/17 - 13:55:45 | 200 |   10.169377ms |   59.83.208.105 | GET      "/"
+[GIN] 2024/09/17 - 13:55:45 | 200 |      99.929µs |  106.52.123.222 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/17 - 13:55:45 | 200 |   18.582275ms | 114.132.203.176 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2849053
+[GIN] 2024/09/17 - 13:55:45 | 200 |   10.651307ms |  180.101.244.12 | GET      "/"
+[GIN] 2024/09/17 - 13:55:45 | 200 |      84.249µs |   159.75.198.59 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2312591
+[GIN] 2024/09/17 - 13:55:46 | 200 |   10.078275ms |   59.83.208.105 | GET      "/"
+[GIN] 2024/09/17 - 13:55:47 | 200 |   1.02784805s |    59.36.125.88 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/17 - 13:55:47 | 200 |     153.089µs |   59.83.208.105 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/17 - 13:55:47 | 200 |     110.658µs |   59.83.208.106 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/17 - 13:55:47 | 200 |      55.805µs |  180.101.244.16 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/17 - 13:55:47 | 200 |      54.533µs | 129.211.167.182 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/17 - 13:55:48 | 200 |  1.020030338s |   59.83.208.105 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/17 - 13:55:49 | 200 |   1.78245171s |   59.83.208.106 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/17 - 13:55:50 | 200 |  1.750413552s |   59.83.208.105 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/17 - 13:55:51 | 200 |  261.076354ms |   59.83.208.105 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/17 - 13:55:51 | 200 |  3.903375068s | 180.101.245.248 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/17 - 13:55:51 | 200 |  4.134290084s |  180.101.244.16 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/17 - 13:55:52 | 200 |  521.751642ms |   59.83.208.105 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/17 - 13:55:52 | 200 |      77.717µs |   59.83.208.105 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/17 - 13:55:52 | 200 |      66.426µs |  180.101.244.16 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/17 - 13:55:52 | 200 |  738.633724ms |   59.83.208.106 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/17 - 13:55:52 | 200 |      77.727µs |   59.83.208.105 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/17 - 13:55:52 | 200 |   74.846557ms |   59.83.208.105 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/17 - 13:55:52 | 404 |      20.118µs |   59.83.208.105 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/17 - 13:55:53 | 200 |      95.249µs |   59.83.208.106 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/17 - 13:55:54 | 200 |      88.677µs |   59.83.208.106 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/17 - 13:55:54 | 200 |     105.348µs |   59.83.208.106 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/17 - 13:55:54 | 200 |  1.808141446s |  180.101.244.16 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/17 - 13:55:54 | 200 |  2.669662844s | 180.101.245.248 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/17 - 13:55:54 | 200 |      101.11µs | 180.101.245.248 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/17 - 13:55:57 | 200 |  3.052826343s |   59.83.208.106 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/17 - 13:55:58 | 200 |  3.111038331s | 180.101.245.248 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/17 - 13:55:58 | 200 |   67.791673ms | 180.101.245.248 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/17 - 13:55:58 | 200 |   67.891912ms | 180.101.245.248 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/17 - 13:55:59 | 200 |   67.804006ms | 180.101.245.248 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/17 - 13:55:59 | 200 |  7.769374873s | 129.211.167.182 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/17 - 13:55:59 | 200 |  135.481644ms | 180.101.245.248 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/17 - 13:55:59 | 200 |  1.342718471s |   59.83.208.106 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/17 - 13:56:00 | 200 |  293.758458ms | 129.211.167.182 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/17 - 13:56:00 | 200 |  7.139251853s |   59.83.208.105 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/17 - 13:56:00 | 200 |  1.215469051s | 180.101.245.248 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/17 - 13:56:01 | 200 |  6.179613013s |  180.101.244.16 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/17 - 13:56:04 | 200 | 12.463083864s |   59.83.208.106 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2529831
+[GIN] 2024/09/17 - 14:11:09 | 200 |   10.549995ms | 220.196.160.101 | GET      "/"
+[GIN] 2024/09/17 - 14:11:09 | 200 |     159.721µs | 220.196.160.101 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/17 - 14:11:09 | 200 |     112.061µs | 220.196.160.144 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/17 - 14:11:09 | 200 |      45.846µs |  220.196.160.65 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/17 - 14:11:09 | 200 |      44.854µs |  220.196.160.83 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/17 - 14:11:10 | 200 |   60.331184ms |  220.196.160.73 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/17 - 14:11:10 | 200 |   61.056642ms | 220.196.160.101 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/17 - 14:11:10 | 200 |  525.380257ms | 220.196.160.146 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/17 - 14:11:11 | 200 |     128.472µs |  220.196.160.73 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/17 - 14:11:11 | 200 |     200.458µs | 220.196.160.101 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/17 - 14:11:12 | 200 |  998.683315ms | 220.196.160.144 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/17 - 14:11:12 | 404 |      22.142µs |  220.196.160.73 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/17 - 14:11:12 | 200 |      74.782µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/17 - 14:11:12 | 200 |      91.222µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/17 - 14:11:12 | 200 |       79.48µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/17 - 14:11:12 | 200 |      99.378µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/17 - 14:11:12 | 200 |  149.628855ms | 220.196.160.144 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/17 - 14:11:13 | 200 |  403.779609ms | 220.196.160.144 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/17 - 14:11:14 | 200 |     156.395µs | 220.196.160.101 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/17 - 14:11:14 | 200 |     144.183µs | 220.196.160.144 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/17 - 14:11:15 | 200 |   3.78629732s | 220.196.160.146 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/17 - 14:11:15 | 200 |     207.521µs | 220.196.160.101 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/17 - 14:11:15 | 200 |     159.611µs | 220.196.160.144 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/17 - 14:11:15 | 200 |  5.232178464s |  220.196.160.83 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/17 - 14:11:15 | 200 |     102.253µs | 220.196.160.144 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/17 - 14:11:15 | 200 |   63.231203ms |  220.196.160.83 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/17 - 14:11:15 | 200 |      77.196µs |  220.196.160.83 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/17 - 14:11:15 | 200 |      66.545µs |  220.196.160.83 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/17 - 14:11:16 | 200 |  174.403895ms | 220.196.160.144 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/17 - 14:11:16 | 200 |     151.396µs | 220.196.160.144 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/17 - 14:11:17 | 200 |  1.336213841s |  220.196.160.83 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/17 - 14:11:17 | 200 |     116.479µs | 220.196.160.146 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/17 - 14:11:18 | 200 |   1.16703068s |  220.196.160.83 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/17 - 14:11:18 | 200 |  1.222786477s | 220.196.160.101 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/17 - 14:11:20 | 200 |  9.321108366s |  220.196.160.65 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/17 - 14:11:20 | 200 |  2.629505398s | 220.196.160.146 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/17 - 14:11:23 | 200 | 10.816562197s |  220.196.160.73 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/17 - 14:11:23 | 404 |       1.423µs |  220.196.160.73 | GET      "/favicon.ico"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/18 10:07:04 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2495916
+[GIN] 2024/09/18 - 10:07:04 | 200 |   11.013763ms |   120.227.56.62 | GET      "/mainPage"
+[GIN] 2024/09/18 - 10:07:04 | 304 |    3.598948ms |   120.227.56.62 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/18 - 10:07:04 | 304 |       48.13µs |   120.227.56.62 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      54.494µs |   120.227.56.62 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      52.449µs |   120.227.56.62 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      44.714µs |   120.227.56.62 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      35.357µs |   120.227.56.62 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      24.497µs |   120.227.56.62 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      64.543µs |   120.227.56.62 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      66.605µs |   120.227.56.62 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      66.235µs |   120.227.56.62 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      50.516µs |   120.227.56.62 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      29.355µs |   120.227.56.62 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      29.135µs |   120.227.56.62 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      25.338µs |   120.227.56.62 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      26.359µs |   120.227.56.62 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 404 |      20.308µs |   120.227.56.62 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      56.826µs |   120.227.56.62 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      31.349µs |   120.227.56.62 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      19.136µs |   120.227.56.62 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      30.677µs |   120.227.56.62 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      24.957µs |   120.227.56.62 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      40.768µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      29.927µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |       52.54µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      18.205µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      22.884µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      24.387µs |   120.227.56.62 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      30.226µs |   120.227.56.62 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      29.586µs |   120.227.56.62 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      60.784µs |   120.227.56.62 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      32.161µs |   120.227.56.62 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      27.252µs |   120.227.56.62 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      27.523µs |   120.227.56.62 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      35.707µs |   120.227.56.62 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      54.762µs |   120.227.56.62 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/18 - 10:07:04 | 304 |      59.352µs |   120.227.56.62 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/18 - 10:07:05 | 404 |       1.633µs |   120.227.56.62 | GET      "/favicon.ico"
+[GIN] 2024/09/18 - 10:07:09 | 404 |     599.251µs |   120.227.56.62 | GET      "/static/frontend/js/swiper.min.js.map"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2666370
+[GIN] 2024/09/18 - 10:07:11 | 200 |   10.637002ms |   120.227.56.62 | GET      "/mainPage"
+[GIN] 2024/09/18 - 10:07:11 | 404 |      21.521µs |   120.227.56.62 | GET      "/static/frontend/js/swiper.min.js.map"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2834726
+[GIN] 2024/09/18 - 10:07:14 | 200 |   10.699629ms |   120.227.56.62 | GET      "/mainPage"
+[GIN] 2024/09/18 - 10:07:14 | 404 |       20.41µs |   120.227.56.62 | GET      "/static/frontend/js/swiper.min.js.map"
+[GIN] 2024/09/18 - 10:07:26 | 200 |  1.528465426s |   120.227.56.62 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 3857245
+[GIN] 2024/09/18 - 10:14:58 | 200 |   15.791593ms |  220.196.160.65 | GET      "/mainPage"
+[GIN] 2024/09/18 - 10:14:58 | 200 |     106.743µs |   106.52.114.40 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2520214
+[GIN] 2024/09/18 - 10:15:05 | 200 |    19.44259ms | 220.196.160.101 | GET      "/"
+[GIN] 2024/09/18 - 10:15:05 | 200 |      106.62µs |   106.52.109.61 | GET      "/static/frontend/js/base.js"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 3644424
+[GIN] 2024/09/18 - 10:15:05 | 200 |    15.63517ms | 220.196.160.117 | GET      "/"
+[GIN] 2024/09/18 - 10:15:05 | 200 |      196.39µs | 220.196.160.117 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/18 - 10:15:05 | 200 |     130.797µs |  220.196.160.65 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/18 - 10:15:05 | 200 |     153.159µs |  220.196.160.76 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/18 - 10:15:05 | 200 |      85.181µs | 220.196.160.144 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/18 - 10:15:06 | 200 |   61.474705ms |  220.196.160.61 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/18 - 10:15:06 | 200 |   59.421332ms | 220.196.160.117 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/18 - 10:15:06 | 200 |  504.650948ms |  220.196.160.83 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/18 - 10:15:08 | 200 |  1.410079602s | 220.196.160.117 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/18 - 10:15:08 | 200 |     213.672µs | 220.196.160.117 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |      222.98µs | 220.196.160.117 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |   31.481576ms | 220.196.160.144 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |   115.46387ms |  220.196.160.65 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |  426.339008ms |  220.196.160.83 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |  388.650073ms | 220.196.160.144 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/18 - 10:15:10 | 200 |      73.509µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/18 - 10:15:10 | 200 |      79.339µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/18 - 10:15:10 | 200 |      63.891µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/18 - 10:15:11 | 404 |      23.514µs | 220.196.160.117 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/18 - 10:15:11 | 200 |   94.508117ms | 220.196.160.144 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/18 - 10:15:11 | 200 |       84.93µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/18 - 10:15:11 | 200 |      88.527µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/18 - 10:15:11 | 200 |      82.907µs | 220.196.160.144 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/18 - 10:15:11 | 200 |  125.885837ms | 220.196.160.144 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/18 - 10:15:12 | 200 |     133.502µs | 220.196.160.144 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/18 - 10:15:12 | 200 |  670.224998ms |  220.196.160.83 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/18 - 10:15:14 | 200 |     184.699µs |  220.196.160.83 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/18 - 10:15:15 | 200 |  2.932033845s | 220.196.160.144 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/18 - 10:15:15 | 200 |     165.933µs | 220.196.160.144 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/18 - 10:15:16 | 200 |     174.479µs | 220.196.160.144 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/18 - 10:15:16 | 200 |  5.746611994s | 220.196.160.117 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/18 - 10:15:17 | 200 |     191.431µs |  220.196.160.83 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/18 - 10:15:17 | 200 |     178.367µs | 220.196.160.117 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/18 - 10:15:17 | 200 |   7.64505342s |  220.196.160.61 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/18 - 10:15:17 | 200 |     213.372µs | 220.196.160.117 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/18 - 10:15:18 | 200 |  1.131900221s | 220.196.160.144 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/18 - 10:15:21 | 200 | 15.885303562s |  220.196.160.76 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2406810
+[GIN] 2024/09/18 - 13:48:38 | 200 |    9.954074ms |  202.197.33.217 | GET      "/mainPage"
+[GIN] 2024/09/18 - 13:48:38 | 200 |     172.986µs |  202.197.33.217 | GET      "/static/frontend/css/style.css"
+[GIN] 2024/09/18 - 13:48:38 | 200 |     136.457µs |  202.197.33.217 | GET      "/static/frontend/css/swiper.min.css"
+[GIN] 2024/09/18 - 13:48:38 | 200 |      48.351µs |  202.197.33.217 | GET      "/static/frontend/image/logo_top.png"
+[GIN] 2024/09/18 - 13:48:38 | 200 |      40.647µs |  202.197.33.217 | GET      "/static/frontend/js/base.js"
+[GIN] 2024/09/18 - 13:48:38 | 200 |    86.71739ms |  202.197.33.217 | GET      "/static/upload/20240602/1717314304194322269.jpg"
+[GIN] 2024/09/18 - 13:48:39 | 200 |  1.498622977s |  202.197.33.217 | GET      "/static/frontend/js/swiper.min.js"
+[GIN] 2024/09/18 - 13:48:40 | 200 |  1.989688147s |  202.197.33.217 | GET      "/static/frontend/js/jquery-1.10.1.js"
+[GIN] 2024/09/18 - 13:48:40 | 200 |  2.332919153s |  202.197.33.217 | GET      "/static/upload/20240602/1717315151663194719.jpg"
+[GIN] 2024/09/18 - 13:48:40 | 200 |       74.33µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_02.gif"
+[GIN] 2024/09/18 - 13:48:41 | 200 |  215.783969ms |  202.197.33.217 | GET      "/static/frontend/image/hongmi4x.png"
+[GIN] 2024/09/18 - 13:48:41 | 200 |  485.996691ms |  202.197.33.217 | GET      "/static/upload/20240602/1717314761823583349.jpg"
+[GIN] 2024/09/18 - 13:48:41 | 200 |  2.193418474s |  202.197.33.217 | GET      "/static/upload/20240602/1717313897313843503.jpg"
+[GIN] 2024/09/18 - 13:48:41 | 200 |  216.292048ms |  202.197.33.217 | GET      "/static/frontend/image/pinghengche.jpg"
+[GIN] 2024/09/18 - 13:48:42 | 200 |     101.792µs |  202.197.33.217 | GET      "/static/frontend/image/product5.png"
+[GIN] 2024/09/18 - 13:48:42 | 200 |  172.679234ms |  202.197.33.217 | GET      "/static/frontend/image/dianshi.png"
+[GIN] 2024/09/18 - 13:48:42 | 200 |     170.072µs |  202.197.33.217 | GET      "/static/frontend/image/m2.png"
+[GIN] 2024/09/18 - 13:48:42 | 200 |     142.879µs |  202.197.33.217 | GET      "/static/frontend/image/mi1.png"
+[GIN] 2024/09/18 - 13:48:42 | 200 |     157.438µs |  202.197.33.217 | GET      "/static/frontend/image/brand1.png"
+[GIN] 2024/09/18 - 13:48:42 | 404 |      17.614µs |  202.197.33.217 | GET      "/static/frontend/image/yyymix.gif"
+[GIN] 2024/09/18 - 13:48:42 | 200 |      65.294µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_03.gif"
+[GIN] 2024/09/18 - 13:48:42 | 200 |      64.721µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_01.gif"
+[GIN] 2024/09/18 - 13:48:42 | 200 |      38.292µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_06.gif"
+[GIN] 2024/09/18 - 13:48:44 | 200 |  4.268231989s |  202.197.33.217 | GET      "/static/upload/20240602/1717312400448541494.jpg"
+[GIN] 2024/09/18 - 13:48:45 | 200 |      81.885µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_05.gif"
+[GIN] 2024/09/18 - 13:48:45 | 200 |      69.851µs |  202.197.33.217 | GET      "/static/frontend/image/hjh_04.gif"
+[GIN] 2024/09/18 - 13:48:46 | 200 |  873.850225ms |  202.197.33.217 | GET      "/static/upload/20240602/1717316673741427694.jpg"
+[GIN] 2024/09/18 - 13:48:46 | 200 |  3.610079472s |  202.197.33.217 | GET      "/static/frontend/image/shouji.jpg"
+[GIN] 2024/09/18 - 13:48:46 | 200 |   90.016632ms |  202.197.33.217 | GET      "/static/upload/20240530/1717043158963485900.jpg"
+[GIN] 2024/09/18 - 13:48:47 | 200 |      127.74µs |  202.197.33.217 | GET      "/static/upload/20240530/1717043240054305397.jpg"
+[GIN] 2024/09/18 - 13:48:47 | 200 |  4.518306951s |  202.197.33.217 | GET      "/static/upload/20240602/1717316554319312220.jpg"
+[GIN] 2024/09/18 - 13:48:48 | 200 |     174.669µs |  202.197.33.217 | GET      "/static/frontend/image/peijian1.jpg"
+[GIN] 2024/09/18 - 13:48:48 | 200 |    5.8863148s |  202.197.33.217 | GET      "/static/upload/20240602/1717316479584604688.jpg"
+[GIN] 2024/09/18 - 13:48:49 | 200 |  2.236628919s |  202.197.33.217 | GET      "/static/upload/20240602/1717312501168415369.jpg"
+[GIN] 2024/09/18 - 13:48:51 | 200 |  3.419502624s |  202.197.33.217 | GET      "/static/upload/20240602/1717312698591940269.jpg"
+[GIN] 2024/09/18 - 13:48:51 | 200 | 10.837016806s |  202.197.33.217 | GET      "/static/upload/20240602/1717314964159897559.jpg"
+[GIN] 2024/09/18 - 13:48:51 | 200 | 10.892063656s |  202.197.33.217 | GET      "/static/upload/20240602/1717314460421696719.jpg"
+[GIN] 2024/09/18 - 13:48:51 | 404 |       1.703µs |  202.197.33.217 | GET      "/favicon.ico"
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/18 - 13:49:00 | 200 |    49.93089ms |  202.197.33.217 | GET      "/auth/login"
+[GIN] 2024/09/18 - 13:49:01 | 200 |   10.410454ms |  202.197.33.217 | GET      "/static/frontend/css/login.css"
+get cookie failed http: named cookie not present
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+[GIN] 2024/09/18 - 13:49:12 | 200 |    8.376618ms |  202.197.33.217 | GET      "/admin/login"
+[GIN] 2024/09/18 - 13:49:12 | 200 |   26.776791ms |  202.197.33.217 | GET      "/static/backend/css/login.css"
+[GIN] 2024/09/18 - 13:49:12 | 200 |    7.919496ms |  202.197.33.217 | GET      "/static/backend/images/login_btn.jpg"
+[GIN] 2024/09/18 - 13:49:12 | 200 |    52.81579ms |  202.197.33.217 | GET      "/static/backend/images/login_bg.jpg"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+[mysql] 2024/09/19 18:36:41 packets.go:122: closing bad idle connection: unexpected read from socket
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2811452
+[GIN] 2024/09/19 - 18:36:41 | 200 |  192.402101ms | 101.251.238.171 | GET      "/"
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+get cookie failed http: named cookie not present
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+redis读取数据失败 dial tcp [::1]:6379: connect: connection refused
+redistiem 3600
+redis写入数据失败 dial tcp [::1]:6379: connect: connection refused
+执行时间 2658241
+[GIN] 2024/09/19 - 18:37:13 | 200 |    10.30404ms | 101.251.238.171 | GET      "/"
+[GIN] 2024/09/19 - 18:37:21 | 404 |       1.693µs | 101.251.238.171 | GET      "/favicon.ico"
