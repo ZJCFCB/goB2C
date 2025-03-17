@@ -65,9 +65,10 @@ func CreateCaptchaHTML() template.HTML {
 func CaptchaVerify(phoneCodeId string, phone_code string) bool {
 
 	//把验证码校验去掉
-	return true
+	//return true
 
 	ans, err := dao.RedisGetString(phoneCodeId)
+	fmt.Println("输入的验证码", phone_code, "验证码答案", ans)
 	if err != nil {
 		return false
 	}
